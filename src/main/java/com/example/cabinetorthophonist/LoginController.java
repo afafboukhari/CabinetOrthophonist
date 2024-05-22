@@ -1,14 +1,6 @@
 package com.example.cabinetorthophonist;
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
-import org.w3c.dom.Text;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.io.IOException;
+import Model.Orthophonist;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -22,9 +14,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import java.util.ArrayList;
 
 
-public class LoginController {
+
+public class LoginController
+{
     @FXML
     private TextField usernameField;
     @FXML
@@ -35,46 +30,29 @@ public class LoginController {
     private Label passwordErrorMessage;
     @FXML
     private Button SignInButton;
-    @FXML
-    private Button SignUpButton;
 
-    public LoginController() {
+    public LoginController()
+    {
+
     }
 
     @FXML
     public void SignIn() {
         String username = this.usernameField.getText();
         String password = this.passwordField.getText();
-        Utilisateur utilisateur = this.authenticate(username, password);
-        if (utilisateur != null) {
-            DataManager.getInstance().setUtilisateur(utilisateur);
-            ArrayList<Tache> tasks = new ArrayList();
-            TaskManager.getInstance().setTasks(tasks);
-            this.loadNextPage(utilisateur);
+        Orthophonist orthophonist = this.authenticate(username, password);
+        if (orthophonist != null) {
+            this.loadNextPage(orthophonist);
         }
 
     }
 
-    @FXML
-    public void SignUp() {
-        String PageRouter = "Registration/Registration.fxml";
-
-        try {
-            Parent next = (Parent)FXMLLoader.load(this.getClass().getResource("../../Frontend/Pages/" + PageRouter));
-            Scene currentScene = this.SignInButton.getScene();
-            currentScene.setRoot(next);
-        } catch (IOException var4) {
-            var4.printStackTrace();
-        }
-
-    }
-
-    private Utilisateur authenticate(String username, String password) {
+    private Orthophonist authenticate(String username, String password) {
         String pseudo = username.toLowerCase().replaceAll(" ", "");
-        String filename = "./src/TimePlanner/UsersInformation/" + pseudo + ".ser";
+        String filename = "./src/data/" + pseudo + ".ser";
         File file = new File(filename);
         if (file.exists()) {
-            Utilisateur utilisateur = null;
+            Orthophonist orthophonist = null;
 
             try {
                 Throwable var7 = null;
@@ -83,17 +61,17 @@ public class LoginController {
                 try {
                     FileInputStream fileInputStream = new FileInputStream(file);
 
-                    Utilisateur var10000;
+                    Orthophonist var10000;
                     label368: {
                         try {
                             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
 
                             try {
-                                utilisateur = (Utilisateur)objectInputStream.readObject();
-                                String storedUsername = utilisateur.getProfile().getNom();
-                                String storedPassword = utilisateur.getProfile().getPassword();
+                                orthophonist = (Orthophonist)objectInputStream.readObject();
+                                String storedUsername = orthophonist.getNom();
+                                String storedPassword = orthophonist.getMotDePasse();
                                 if (username.equals(storedUsername) && password.equals(storedPassword)) {
-                                    var10000 = utilisateur;
+                                    var10000 = orthophonist;
                                     break label368;
                                 }
 
@@ -136,10 +114,15 @@ public class LoginController {
                     } else if (var7 != var27) {
                         var7.addSuppressed(var27);
                     }
+                    try {
+                        throw var7;
+                    } catch (Throwable e) {
+                        throw new RuntimeException(e);
+                    }
 
-                    throw var7;
+
                 }
-            } catch (ClassNotFoundException | IOException var28) {
+            } catch (Throwable var28) {
                 var28.printStackTrace();
             }
         } else {
@@ -151,21 +134,19 @@ public class LoginController {
         return null;
     }
 
-    private void loadNextPage(Utilisateur utilisateur) {
+    private void loadNextPage(Orthophonist orthophonist) {
         String nextPage;
-        if (utilisateur.getProjets_en_cours() != null && utilisateur.getProjets_en_cours().size() != 0) {
-            nextPage = "../../Frontend/Pages/Profile/Profile.fxml";
-        } else {
-            nextPage = "../../Frontend/Pages/PeriodChoice/PeriodChoice.fxml";
-        }
+        nextPage = "com/example/cabinetorthophonist/home-view.fxml";
 
         try {
             Parent next = (Parent)FXMLLoader.load(this.getClass().getResource(nextPage));
-            Scene currentScene = this.SignUpButton.getScene();
+            Scene currentScene = this.SignInButton.getScene();
             currentScene.setRoot(next);
         } catch (IOException var5) {
             var5.printStackTrace();
         }
 
     }
+
+
 }
