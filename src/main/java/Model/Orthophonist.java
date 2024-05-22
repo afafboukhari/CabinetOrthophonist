@@ -12,21 +12,20 @@ public class Orthophonist implements Serializable
 {
     private String nom;
     private String prenom;
-    private String nom_utilisateur;
     private String adresse;
     private String num_tel;
     private String email;
     private ArrayList<Patient> listePatients;
     private String motDePasse;
 
-    public Orthophonist(String nom, String prenom, String adresse, String num_tel, String email)
+    public Orthophonist(String nom, String prenom, String email,String motdepasse, String num_tel, String adresse)
     {
         this.nom = nom;
         this.prenom = prenom;
         this.adresse = adresse;
         this.num_tel = num_tel;
         this.email = email;
-        this.listePatients = new ArrayList<>();
+        this.motDePasse = motdepasse;
     }
 
     public Orthophonist()
@@ -65,11 +64,6 @@ public class Orthophonist implements Serializable
         return motDePasse;
     }
 
-    public String getNom_utilisateur()
-    {
-        return nom_utilisateur;
-    }
-
     public ArrayList<Patient> getListPatient()
     {
         return listePatients;
@@ -83,17 +77,13 @@ public class Orthophonist implements Serializable
     {
         this.prenom = prenom;
     }
-    public void setNom_utilisateur(String nom_utilisateur)
-    {
-        this.nom_utilisateur = nom_utilisateur;
-    }
     public void setMotDePasse(String motDePasse)
     {
         this.motDePasse = motDePasse;
     }
     public static void saveProfile(Orthophonist orthophonist) {
         try {
-            FileOutputStream fileOut = new FileOutputStream(orthophonist.getNom_utilisateur() + ".ser");
+            FileOutputStream fileOut = new FileOutputStream(orthophonist.getEmail() + ".ser");
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
             out.writeObject(orthophonist);
             out.close();
@@ -105,9 +95,9 @@ public class Orthophonist implements Serializable
 
     }
 
-    public static Orthophonist loadOrthophonist(String username) {
+    public static Orthophonist loadOrthophonist(String email) {
         try {
-            FileInputStream fileIn = new FileInputStream(username + ".ser");
+            FileInputStream fileIn = new FileInputStream(email + ".ser");
             ObjectInputStream in = new ObjectInputStream(fileIn);
             Orthophonist orthophonist = (Orthophonist)in.readObject();
             in.close();

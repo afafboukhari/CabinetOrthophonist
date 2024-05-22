@@ -5,7 +5,6 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
-import java.util.ArrayList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -14,44 +13,47 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import java.util.ArrayList;
+import javafx.scene.text.Text;
 
 
 
 public class LoginController
 {
     @FXML
-    private TextField usernameField;
+    private TextField emailField;
     @FXML
-    private Label usernameErrorMessage;
+    private Label emailerrormessage;
     @FXML
     private PasswordField passwordField;
     @FXML
     private Label passwordErrorMessage;
     @FXML
     private Button SignInButton;
+    @FXML
+    private Button Signup;
 
     public LoginController()
     {
-
     }
 
     @FXML
     public void SignIn() {
-        String username = this.usernameField.getText();
+        System.out.println("login");
+        String email = this.emailField.getText();
         String password = this.passwordField.getText();
-        Orthophonist orthophonist = this.authenticate(username, password);
+        Orthophonist orthophonist = this.authenticate(email, password);
         if (orthophonist != null) {
             this.loadNextPage(orthophonist);
         }
 
     }
 
-    private Orthophonist authenticate(String username, String password) {
-        String pseudo = username.toLowerCase().replaceAll(" ", "");
+    private Orthophonist authenticate(String email, String password) {
+        String pseudo = email.toLowerCase().replaceAll(" ", "");
         String filename = "./src/data/" + pseudo + ".ser";
         File file = new File(filename);
         if (file.exists()) {
+            System.out.println("file exist");
             Orthophonist orthophonist = null;
 
             try {
@@ -68,14 +70,15 @@ public class LoginController
 
                             try {
                                 orthophonist = (Orthophonist)objectInputStream.readObject();
-                                String storedUsername = orthophonist.getNom();
+                                String storedEmail = orthophonist.getEmail();
                                 String storedPassword = orthophonist.getMotDePasse();
-                                if (username.equals(storedUsername) && password.equals(storedPassword)) {
+                                if (email.equals(storedEmail) && password.equals(storedPassword)) {
                                     var10000 = orthophonist;
                                     break label368;
                                 }
 
-                                this.passwordErrorMessage.setText("Invalid password");
+                                this.passwordErrorMessage.setText("Mot de passe incorrecte");
+                                passwordErrorMessage.setVisible(true);
                             } finally {
                                 if (objectInputStream != null) {
                                     objectInputStream.close();
@@ -126,9 +129,11 @@ public class LoginController
                 var28.printStackTrace();
             }
         } else {
+            System.out.println("email mkech");
             System.out.println("Working Directory: " + System.getProperty("user.dir"));
             System.out.println("File Path: " + file.getAbsolutePath());
-            this.usernameErrorMessage.setText("Username does not exist");
+            this.emailerrormessage.setText("email non trouvé");
+            emailerrormessage.setVisible(true);
         }
 
         return null;
@@ -140,12 +145,24 @@ public class LoginController
 
         try {
             Parent next = (Parent)FXMLLoader.load(this.getClass().getResource(nextPage));
-            Scene currentScene = this.SignInButton.getScene();
+            Scene currentScene = this.Signup.getScene();
             currentScene.setRoot(next);
         } catch (IOException var5) {
             var5.printStackTrace();
         }
 
+    }
+
+    public void Signup()
+    {
+        try {
+            Parent next = (Parent)FXMLLoader.load(getClass().getResource("signup-view.fxml"));
+            Scene currentScene = this.Signup.getScene();
+            currentScene.setRoot(next);
+        } catch (IOException var5) {
+            System.out.println("here");
+            var5.printStackTrace();
+        }
     }
 
 
