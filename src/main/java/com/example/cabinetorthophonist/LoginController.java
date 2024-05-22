@@ -139,16 +139,17 @@ public class LoginController
         return null;
     }
 
-    private void loadNextPage(Orthophonist orthophonist) {
-        String nextPage;
-        nextPage = "com/example/cabinetorthophonist/home-view.fxml";
+    private void loadNextPage(Orthophonist utilisateur) {
+        try
+        {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("home-view.fxml"));
+            Parent root = loader.load();
+            Scene currentScene = SignInButton.getScene();
+            currentScene.setRoot(root);
 
-        try {
-            Parent next = (Parent)FXMLLoader.load(this.getClass().getResource(nextPage));
-            Scene currentScene = this.Signup.getScene();
-            currentScene.setRoot(next);
-        } catch (IOException var5) {
-            var5.printStackTrace();
+        } catch (IOException e)
+        {
+            e.printStackTrace();
         }
 
     }

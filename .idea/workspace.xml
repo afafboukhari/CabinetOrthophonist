@@ -5,11 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55f40f0b-67cd-4bd2-aa4c-643dba37423c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/AgendaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/BOController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/FicheDeSuiviController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/PatientsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/ProfileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/TestesController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/Agenda.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/BO.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/FicheDeSuivi.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/Patients.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/Profile.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/Testes.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Orthophonist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Orthophonist.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/afaf@hehe.com.ser" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/afaf@hehe.com.ser" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/ma_boukhari@esi.dz.ser" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/homecss.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/HomeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/SignupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/SignupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/signup-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/signup-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/home-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/home-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,7 +33,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -53,6 +69,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
