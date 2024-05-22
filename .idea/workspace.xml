@@ -5,45 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55f40f0b-67cd-4bd2-aa4c-643dba37423c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/AgendaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/AgendaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/BOController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/BOController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/FicheDeSuiviController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/FicheDeSuiviController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/PatientsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/PatientsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/ProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/ProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/TestesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/TestesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/images/Patient/loupe.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/images/SideBar/Calendar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/images/SideBar/Chart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/images/SideBar/Chart_fill.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/images/SideBar/Chat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/images/SideBar/Encadrant.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/images/SideBar/Folder.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/images/SideBar/Search.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/images/SideBar/Setting.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/images/SideBar/User.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/images/SideBar/agenda.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/images/SideBar/control.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/images/SideBar/dossier.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/images/SideBar/evaluation-2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/images/SideBar/evaluation.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/images/SideBar/importfile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/images/SideBar/logout.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/images/SideBar/patient-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/images/SideBar/patient-4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/images/SideBar/se-deconnecter-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/images/SideBar/se-deconnecter.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/images/SideBar/se-deconnecter.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/images/SideBar/test.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/images/SideBar/tester-3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/images/SideBar/utilisateur.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/Agenda.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/Agenda.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/BO.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/BO.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/FicheDeSuivi.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/FicheDeSuivi.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/Patients.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/Patients.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/Profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/Profile.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/Testes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/Testes.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/hello-view.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/home-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/home-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/images/CheckSign.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/images/CheckSign.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
