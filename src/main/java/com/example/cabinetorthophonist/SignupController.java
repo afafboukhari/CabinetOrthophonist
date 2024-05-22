@@ -33,9 +33,29 @@ public class SignupController
     @FXML
     private Button creer;
 
-    public void tamere()
+    public void SignUp()
     {
-        System.out.println("emchi");
+        String nomvalue = this.nom.getText();
+        String prenomvalue = this.prenom.getText();
+        String password = this.motdepasse.getText();
+        String emailvalue = this.email.getText();
+        String numerotelephonevalue = this.numerotelephone.getText();
+        String adressvalue = this.adress.getText();
+        new Orthophonist(nomvalue,prenomvalue,emailvalue,password,numerotelephonevalue,adressvalue);
+        System.out.println("done");
+        this.returne();
+    }
+
+    @FXML
+    public void returne() {
+        try {
+            Parent next = (Parent)FXMLLoader.load(this.getClass().getResource("login-view.fxml"));
+            Scene currentScene = this.creer.getScene();
+            currentScene.setRoot(next);
+        } catch (IOException var4) {
+            var4.printStackTrace();
+        }
+
     }
 
 }

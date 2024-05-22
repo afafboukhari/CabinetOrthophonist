@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55f40f0b-67cd-4bd2-aa4c-643dba37423c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/ma_boukhari@esi.dz.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/SignupController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/Orthophonist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Orthophonist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/login-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/login-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/SignupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/SignupController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/signup-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/signup-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

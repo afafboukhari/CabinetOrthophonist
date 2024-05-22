@@ -88,12 +88,12 @@
                </VBox.margin></TextField>
             <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Button fx:id="retourner" mnemonicParsing="false" style="-fx-background-color: #dd7c19;" text="Retourner" textFill="WHITE">
+                  <Button fx:id="retourner" mnemonicParsing="false" onAction="#returne" style="-fx-background-color: #dd7c19;" text="Retourner" textFill="WHITE">
                      <HBox.margin>
                         <Insets right="5.0" />
                      </HBox.margin>
                   </Button>
-                  <Button fx:id="creer" mnemonicParsing="false" style="-fx-background-color: #b84775;" text="Creer le compte" textFill="WHITE">
+                  <Button fx:id="creer" mnemonicParsing="false" onAction="#SignUp" style="-fx-background-color: #b84775;" text="Creer le compte" textFill="WHITE">
                      <HBox.margin>
                         <Insets left="5.0" />
                      </HBox.margin>

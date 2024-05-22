@@ -26,6 +26,7 @@ public class Orthophonist implements Serializable
         this.num_tel = num_tel;
         this.email = email;
         this.motDePasse = motdepasse;
+        saveProfile(this);
     }
 
     public Orthophonist()
@@ -81,9 +82,9 @@ public class Orthophonist implements Serializable
     {
         this.motDePasse = motDePasse;
     }
-    public static void saveProfile(Orthophonist orthophonist) {
+    public void saveProfile(Orthophonist orthophonist) {
         try {
-            FileOutputStream fileOut = new FileOutputStream(orthophonist.getEmail() + ".ser");
+            FileOutputStream fileOut = new FileOutputStream("src/data/"+orthophonist.getEmail() + ".ser");
             ObjectOutputStream out = new ObjectOutputStream(fileOut);
             out.writeObject(orthophonist);
             out.close();
