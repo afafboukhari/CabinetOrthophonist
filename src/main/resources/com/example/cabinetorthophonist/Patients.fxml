@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cabinetorthophonist.HomeController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cabinetorthophonist.PatientsController">
     <left>
         <VBox prefHeight="600.0" prefWidth="235.0" styleClass="anchorpane" BorderPane.alignment="CENTER">
             <children>
@@ -224,7 +224,7 @@
                                 <Insets left="40.0" right="40.0" />
                             </padding>
                             <children>
-                                <Label text="Ce qu'on assure au niveau de cette fonctionalité">
+                                <Label text="Patients">
                                     <VBox.margin>
                                         <Insets bottom="20.0" />
                                     </VBox.margin>

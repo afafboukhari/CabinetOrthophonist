@@ -1,24 +1,17 @@
 package com.example.cabinetorthophonist;
 
-import java.awt.*;
-import Model.Orthophonist;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-public class HomeController
+import java.io.IOException;
+
+public class TestesController
 {
     @FXML
     private Label Agenda;
