@@ -10,8 +10,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
-public class PatientsController
+public class TypetestController
 {
     @FXML
     private Label Agenda;
@@ -27,6 +28,10 @@ public class PatientsController
     private Label Profile;
     @FXML
     private Label deconnecter;
+    @FXML
+    private Label ajoutertest;
+    @FXML
+    private Label Consultertest;
 
 
     @FXML
@@ -100,4 +105,78 @@ public class PatientsController
             }
         }
     }
+
+
+    @FXML
+    private Label AnamneseAdulte;
+    @FXML
+    private Label AnamneseEnfant;
+    @FXML
+    private Label QCM_QCU;
+    @FXML
+    private Label SerieExercice;
+    @FXML
+    private Label Rep_libre;
+
+    @FXML
+    public void handleRouting2(MouseEvent event) {
+
+        Label label = (Label) event.getSource();
+        String labelText = label.getText();
+
+
+        String PageRouter = "Testes-view.fxml"; // Chemin par défaut
+        boolean newPage = false;
+
+        switch (labelText) {
+            case "Sujet Anamnese pour adulte":
+                newPage = true;
+                PageRouter = "CreerAnamneseAdulte.fxml";
+                break;
+
+            case "Sujet Anamnese pour enfant":
+                newPage = true;
+                PageRouter = "CreerAnamneseEnfant.fxml";
+                break;
+
+            case "QCM,QCU":
+                newPage = true;
+                PageRouter = "CreerQuestionnaire.fxml";
+                break;
+
+            case "Serie d'exercice":
+                newPage = true;
+                PageRouter = "creertest.fxml";
+                break;
+
+            case "Questionnaire á reponses libres":
+                newPage = true;
+                PageRouter = "creertest.fxml";
+                break;
+
+            default:
+                newPage = true;
+                PageRouter = "Testes.fxml";
+                break;
+        }
+        //  PageRouter = "/com/example/tp_poo/Login.fxml";
+
+        if (newPage) {
+            try {
+                // Load the desired page
+                Parent nextPage = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(PageRouter)));
+
+                Stage Scene = (Stage) ((Node)event.getSource()).getScene().getWindow();
+                javafx.scene.Scene scene = new Scene(nextPage, 1000, 670);
+                Scene.setScene(scene);
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+
+
 }

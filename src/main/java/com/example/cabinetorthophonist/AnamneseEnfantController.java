@@ -1,17 +1,23 @@
 package com.example.cabinetorthophonist;
 
+import Model.AnamneseAdulte;
+import Model.AnamneseEnfant;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+import org.w3c.dom.events.Event;
+import org.w3c.dom.events.EventListener;
 
 import java.io.IOException;
 
-public class PatientsController
+public class AnamneseEnfantController
 {
     @FXML
     private Label Agenda;
@@ -27,6 +33,10 @@ public class PatientsController
     private Label Profile;
     @FXML
     private Label deconnecter;
+    @FXML
+    private Label ajoutertest;
+    @FXML
+    private Label Consultertest;
 
 
     @FXML
@@ -99,5 +109,41 @@ public class PatientsController
                 e.printStackTrace();
             }
         }
+    }
+
+    @FXML
+    private TextField titre;
+    @FXML
+    private TextField qst1;
+    @FXML
+    private TextField qst2;
+    @FXML
+    private TextField qst3;
+    @FXML
+    private TextField qst4;
+    @FXML
+    private TextField qst5;
+    @FXML
+    private TextField qst6;
+    @FXML
+    private TextField qst7;
+    @FXML
+    private Button enregistrer;
+
+    @FXML
+    public void create()
+    {
+        String[] tab = {qst1.getText(), qst2.getText(),qst3.getText(), qst4.getText(),qst5.getText(), qst6.getText(),qst7.getText()};
+        AnamneseEnfant test = new AnamneseEnfant(titre.getText(),tab);
+
+        try {
+            Parent next = (Parent)FXMLLoader.load(this.getClass().getResource("Testes.fxml"));
+            Scene currentScene = this.enregistrer.getScene();
+            currentScene.setRoot(next);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }

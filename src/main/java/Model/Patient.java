@@ -1,27 +1,62 @@
 package Model;
 
-import java.io.Serializable;
-import java.util.Date;
 
-public abstract class Patient implements Serializable
-{
+import java.io.Serializable;
+import java.time.LocalDate;
+
+public    class  Patient implements Serializable {
+
+
     private String nom;
     private String prenom;
-    private Date date_de_naissance;
+    private LocalDate date_naissance;
     private String lieu_naissance;
-    private String adresse;
+    private String Adresse;
+    private int num_dossier;//numero dossier
 
-    public Patient(String nom, String prenom, Date dateDeNaissance, String lieuNaissance, String adresse) {
+    public Patient(String nom, String prenom , int num) {
+
         this.nom = nom;
-        this.prenom = prenom;
-        this.date_de_naissance = dateDeNaissance;
-        this.lieu_naissance = lieuNaissance;
-        this.adresse = adresse;
+        this.prenom =prenom;
+        this.num_dossier = num;
     }
 
-    public String getNom()
+    public int getNum_dossier() {
+        return num_dossier;
+    }
+
+    public void setNum_dossier(int num_dossier) {
+        this.num_dossier = num_dossier;
+    }
+
+    public Patient(String nom, String prenom, LocalDate date_naissance, String lieu_naissance, String adresse) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.date_naissance = date_naissance;
+        this.lieu_naissance = lieu_naissance;
+        this.Adresse = adresse;
+
+    }
+
+    public Patient()
     {
-        return this.nom;
+
+    }
+
+    // public Dossier getDossier() {
+    //    return dossier;
+    //}
+
+//    public void setDossier(Dossier dossier) {
+//        this.dossier = dossier;
+//    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
     public String getPrenom() {
@@ -32,12 +67,12 @@ public abstract class Patient implements Serializable
         this.prenom = prenom;
     }
 
-    public Date getDate_de_naissance() {
-        return date_de_naissance;
+    public LocalDate getDate_naissance() {
+        return date_naissance;
     }
 
-    public void setDate_de_naissance(Date date_de_naissance) {
-        this.date_de_naissance = date_de_naissance;
+    public void setDate_naissance(LocalDate date_naissance) {
+        this.date_naissance = date_naissance;
     }
 
     public String getLieu_naissance() {
@@ -49,10 +84,10 @@ public abstract class Patient implements Serializable
     }
 
     public String getAdresse() {
-        return adresse;
+        return Adresse;
     }
 
     public void setAdresse(String adresse) {
-        this.adresse = adresse;
+        Adresse = adresse;
     }
 }

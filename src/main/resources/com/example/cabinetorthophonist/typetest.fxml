@@ -11,9 +11,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cabinetorthophonist.TestesController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cabinetorthophonist.TypetestController">
     <left>
-        <VBox prefHeight="600.0" prefWidth="235.0" styleClass="anchorpane" BorderPane.alignment="CENTER">
+        <VBox prefHeight="670.0" prefWidth="300.0" styleClass="anchorpane" BorderPane.alignment="CENTER">
             <children>
                 <VBox alignment="TOP_CENTER" prefHeight="156.0" prefWidth="235.0">
                     <VBox.margin>
@@ -203,41 +203,102 @@
    <center>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="220.0" fitWidth="220.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../assets/images/ajouter.png" />
-               </image>
+            <Label text="Choisir le type de test que vous souhaitez creer :" underline="true">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0">
+                     <image>
+                        <Image url="@../../../assets/images/stylo.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="AnamneseAdulte" onMouseClicked="#handleRouting2" text="Sujet Anamnese pour adulte">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
                <VBox.margin>
                   <Insets />
                </VBox.margin>
-            </ImageView>
-            <Label fx:id="ajoutertest" onMouseClicked="#ajoutertest" text="Ajouter un test">
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Label>
-            <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../assets/images/liste-de-controle.png" />
-               </image>
-               <VBox.margin>
-                  <Insets top="60.0" />
-               </VBox.margin>
-            </ImageView>
-            <Label fx:id="Consultertest" text="Consulter les tests">
-               <VBox.margin>
-                  <Insets top="10.0" />
-               </VBox.margin>
-               <font>
-                  <Font name="System Bold" size="20.0" />
-               </font>
-            </Label>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0">
+                     <image>
+                        <Image url="@../../../assets/images/stylo.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="AnamneseEnfant" onMouseClicked="#handleRouting2" text="Sujet Anamnese pour enfant">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0">
+                     <image>
+                        <Image url="@../../../assets/images/stylo.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="QCM_QCU" onMouseClicked="#handleRouting2" text="QCM,QCU">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0">
+                     <image>
+                        <Image url="@../../../assets/images/stylo.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="SerieExercice" onMouseClicked="#handleRouting2" text="Serie d'exercice">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0">
+                     <image>
+                        <Image url="@../../../assets/images/stylo.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="Rep_libre" onMouseClicked="#handleRouting2" text="Questionnaire á reponses libres">
+                     <HBox.margin>
+                        <Insets left="20.0" />
+                     </HBox.margin>
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
          </children>
          <BorderPane.margin>
-            <Insets />
+            <Insets left="20.0" />
          </BorderPane.margin>
       </VBox>
    </center>

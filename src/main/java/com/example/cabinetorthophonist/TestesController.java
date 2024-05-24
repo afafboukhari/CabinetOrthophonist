@@ -27,6 +27,10 @@ public class TestesController
     private Label Profile;
     @FXML
     private Label deconnecter;
+    @FXML
+    private Label ajoutertest;
+    @FXML
+    private Label Consultertest;
 
 
     @FXML
@@ -98,6 +102,22 @@ public class TestesController
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+
+    public void ajoutertest(MouseEvent event)
+    {
+        try {
+            String PageRouter = "typetest.fxml";
+            Parent nextPage = FXMLLoader.load(getClass().getResource(PageRouter));
+
+            Stage Scene = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            javafx.scene.Scene scene = new Scene(nextPage, 1000, 670);
+            Scene.setScene(scene);
+
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 }
