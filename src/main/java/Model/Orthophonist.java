@@ -18,7 +18,8 @@ public class Orthophonist implements Serializable
     private String num_tel;
     private String email;
     private Agenda agenda ;
-    private TreeMap<Integer,Patient> listePatients;
+    private TreeMap<Integer,Dossier> mes_dossiers;
+    private Tests mes_test;
     private String motDePasse;
     private Compte compte;
 
@@ -30,7 +31,6 @@ public class Orthophonist implements Serializable
         this.num_tel = num_tel;
         this.email = email;
         this.motDePasse = motdepasse;
-        this.listePatients = new TreeMap<Integer,Patient>() ;
         saveProfile(this);
     }
 
@@ -70,10 +70,6 @@ public class Orthophonist implements Serializable
         return motDePasse;
     }
 
-    public TreeMap<Integer,Patient> getListPatient()
-    {
-        return listePatients;
-    }
     // Les setters :
     public void setNom(String nom)
     {

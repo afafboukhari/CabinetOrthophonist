@@ -109,6 +109,7 @@ public class TestesController
     public void ajoutertest(MouseEvent event)
     {
         try {
+            AnamneseAdulteController.ajouter = true;
             String PageRouter = "typetest.fxml";
             Parent nextPage = FXMLLoader.load(getClass().getResource(PageRouter));
 
@@ -124,7 +125,8 @@ public class TestesController
     public void consultertest(MouseEvent event)
     {
         try {
-            String PageRouter = "typetest.fxml";
+            AnamneseAdulteController.ajouter = false;
+            String PageRouter = "testexist.fxml";
             Parent nextPage = FXMLLoader.load(getClass().getResource(PageRouter));
 
             Stage Scene = (Stage) ((Node)event.getSource()).getScene().getWindow();

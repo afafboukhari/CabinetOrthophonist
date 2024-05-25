@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
-public class AnamneseAdulte implements Test, Serializable
+public class AnamneseAdulte implements Serializable
 {
     private String titre;
     private String[] Question;
@@ -23,18 +23,6 @@ public class AnamneseAdulte implements Test, Serializable
         } catch (IOException var3) {
             System.out.println("Une erreure est servenue : " + var3.getMessage());
         }
-    }
-
-    @Override
-    public void lire() throws IOException
-    {
-
-    }
-
-    @Override
-    public void creer()
-    {
-
     }
 
     public String[] getQuestion() {

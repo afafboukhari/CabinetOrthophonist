@@ -18,6 +18,7 @@ import java.io.IOException;
 
 public class AnamneseAdulteController
 {
+    static boolean ajouter;
     @FXML
     private Label Agenda;
     @FXML
@@ -122,6 +123,7 @@ public class AnamneseAdulteController
     @FXML
     public void create()
     {
+        System.out.println(ajouter);
         String[] tab = {qst1.getText(), qst2.getText()};
         AnamneseAdulte test = new AnamneseAdulte(titre.getText(),tab);
 

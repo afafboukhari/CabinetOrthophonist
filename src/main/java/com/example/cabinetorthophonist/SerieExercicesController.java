@@ -19,6 +19,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class SerieExercicesController {
+    static boolean ajouter;
     @FXML
     private Label Agenda;
     @FXML

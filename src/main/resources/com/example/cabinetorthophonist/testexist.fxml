@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cabinetorthophonist.TestexistController">
+    <left>
+        <VBox prefHeight="670.0" prefWidth="300.0" styleClass="anchorpane" BorderPane.alignment="CENTER">
+            <children>
+                <VBox alignment="TOP_CENTER" prefHeight="156.0" prefWidth="235.0">
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                    <children>
+                        <ImageView fitHeight="69.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true" styleClass="circular">
+                            <image>
+                                <Image url="@../../../assets/images/SideBar/docteur.png" />
+                            </image>
+                        </ImageView>
+                        <Label fx:id="utilisateur1" text="Doctor">
+                            <font>
+                                <Font name="System Bold" size="15.0" />
+                            </font>
+                            <VBox.margin>
+                                <Insets top="5.0" />
+                            </VBox.margin>
+                        </Label>
+                        <Button mnemonicParsing="false" prefHeight="27.0" prefWidth="97.0" style="-fx-background-radius: 30; -fx-background-color: #b84775;" styleClass="btn1" text="Modifier profil" textFill="WHITE">
+                            <VBox.margin>
+                                <Insets top="5.0" />
+                            </VBox.margin>
+                            <padding>
+                                <Insets bottom="5.0" left="10.0" right="10.0" top="5.0" />
+                            </padding>
+                        </Button>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="419.0" prefWidth="235.0" spacing="10.0">
+                    <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="490.0" styleClass="selected">
+                            <VBox.margin>
+                                <Insets left="10.0" right="10.0" />
+                            </VBox.margin>
+                            <children>
+                                <ImageView fitHeight="28.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: #000000;">
+                                    <image>
+                                        <Image url="@../../../assets/images/SideBar/ordre-du-jour.png" />
+                                    </image>
+                                    <HBox.margin>
+                                        <Insets right="10.0" />
+                                    </HBox.margin>
+                                </ImageView>
+                                <Label fx:id="Agenda" onMouseClicked="#handleRouting" text="Agenda">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="48.0" prefWidth="490.0" styleClass="selected">
+                            <children>
+                                <ImageView fitHeight="28.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../assets/images/SideBar/patient.png" />
+                                    </image>
+                                    <HBox.margin>
+                                        <Insets left="10.0" right="10.0" />
+                                    </HBox.margin>
+                                </ImageView>
+                                <Label fx:id="Patients" onMouseClicked="#handleRouting" text="Patients">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" styleClass="selected">
+                            <children>
+                                <ImageView fitHeight="26.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                    <HBox.margin>
+                                        <Insets right="10.0" />
+                                    </HBox.margin>
+                                    <image>
+                                        <Image url="@../../../assets/images/SideBar/medecin.png" />
+                                    </image>
+                                </ImageView>
+                                <Label fx:id="BO" onMouseClicked="#handleRouting" text="BO">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                            <VBox.margin>
+                                <Insets left="10.0" right="10.0" />
+                            </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" styleClass="selected">
+                            <children>
+                                <ImageView fitHeight="27.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                    <HBox.margin>
+                                        <Insets right="10.0" />
+                                    </HBox.margin>
+                                    <image>
+                                        <Image url="@../../../assets/images/SideBar/des-documents.png" />
+                                    </image>
+                                </ImageView>
+                                <Label fx:id="FicheSuivi" onMouseClicked="#handleRouting" text="Fiche de suivi">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                            <VBox.margin>
+                                <Insets left="10.0" right="10.0" />
+                            </VBox.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" styleClass="selected">
+                            <VBox.margin>
+                                <Insets left="10.0" right="10.0" />
+                            </VBox.margin>
+                            <children>
+                                <ImageView fitHeight="26.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                    <HBox.margin>
+                                        <Insets right="10.0" />
+                                    </HBox.margin>
+                                    <image>
+                                        <Image url="@../../../assets/images/SideBar/tester.png" />
+                                    </image>
+                                </ImageView>
+                                <Label fx:id="Testes" onMouseClicked="#handleRouting" text="Testes">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" styleClass="selected">
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                            <VBox.margin>
+                                <Insets left="10.0" right="10.0" />
+                            </VBox.margin>
+                            <children>
+                                <ImageView fitHeight="25.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../assets/images/SideBar/profil.png" />
+                                    </image>
+                                    <HBox.margin>
+                                        <Insets right="10.0" />
+                                    </HBox.margin>
+                                </ImageView>
+                                <Label fx:id="Profile" onMouseClicked="#handleRouting" text="Votre profile">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="200.0" styleClass="selected">
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                            <VBox.margin>
+                                <Insets left="10.0" right="10.0" />
+                            </VBox.margin>
+                            <children>
+                                <ImageView fitHeight="21.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true" style="-fx-rotate: 180;">
+                                    <image>
+                                        <Image url="@../../../assets/images/SideBar/se-deconnecter.png" />
+                                    </image>
+                                    <HBox.margin>
+                                        <Insets right="10.0" />
+                                    </HBox.margin>
+                                </ImageView>
+                                <Label fx:id="deconnecter" onMouseClicked="#handleRouting" text="Se déconnecter">
+                                    <font>
+                                        <Font size="14.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                            <padding>
+                                <Insets right="10.0" />
+                            </padding>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </left>
+   <stylesheets>
+      <URL value="@homecss.css" />
+      <URL value="@homecss.css" />
+   </stylesheets>
+   <center>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Choisir le test que vous souhaitez consulter/modifier  :" underline="true">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0">
+                     <image>
+                        <Image url="@../../../assets/images/stylo.png" />
+                     </image>
+                  </ImageView>
+                  <ComboBox prefHeight="46.0" prefWidth="625.0" promptText="Anamnese Adulte">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </ComboBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0">
+                     <image>
+                        <Image url="@../../../assets/images/stylo.png" />
+                     </image>
+                  </ImageView>
+                  <ComboBox prefHeight="46.0" prefWidth="625.0" promptText="Anamnese Enfant">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </ComboBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0">
+                     <image>
+                        <Image url="@../../../assets/images/stylo.png" />
+                     </image>
+                  </ImageView>
+                  <ComboBox prefHeight="46.0" prefWidth="625.0" promptText="QCM / QCU">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </ComboBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0">
+                     <image>
+                        <Image url="@../../../assets/images/stylo.png" />
+                     </image>
+                  </ImageView>
+                  <ComboBox prefHeight="46.0" prefWidth="625.0" promptText="Serie exercices">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </ComboBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <ImageView fitHeight="40.0" fitWidth="40.0">
+                     <image>
+                        <Image url="@../../../assets/images/stylo.png" />
+                     </image>
+                  </ImageView>
+                  <ComboBox prefHeight="46.0" prefWidth="625.0" promptText="Questionnaire á reponse libre">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </ComboBox>
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets left="20.0" />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+
+</BorderPane>
