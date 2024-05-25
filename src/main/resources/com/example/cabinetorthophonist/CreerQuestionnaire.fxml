@@ -232,12 +232,12 @@
                   </VBox>
                   <VBox prefHeight="200.0">
                      <children>
-                        <Label fx:id="capacitylabel" text="Capacité :">
+                        <Label fx:id="capacitylabel" text="Capacité :" visible="false">
                            <font>
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="capacityTextField" prefHeight="31.0" prefWidth="0.0">
+                        <TextField fx:id="capacityTextField" prefHeight="31.0" prefWidth="0.0" visible="false">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -246,7 +246,7 @@
                   </VBox>
                   <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
                      <children>
-                        <Button fx:id="generer" mnemonicParsing="false" onAction="#generateTextFields" style="-fx-background-color: #b84775;" text="Génerer" textFill="WHITE">
+                        <Button fx:id="generer" mnemonicParsing="false" onAction="#generateTextFields" style="-fx-background-color: #b84775;" text="Génerer" textFill="WHITE" visible="false">
                            <font>
                               <Font size="15.0" />
                            </font>

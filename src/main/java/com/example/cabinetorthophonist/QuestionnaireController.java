@@ -133,6 +133,9 @@ public class QuestionnaireController
     {
         if(!ajouter)
         {
+            capacitylabel.setVisible(false);
+            capacityTextField.setVisible(false);
+            generer.setVisible(false);
             int existingViews = container.getChildren().size() - 1;
 
             // Remove existing views only if necessary
@@ -156,6 +159,10 @@ public class QuestionnaireController
                     e.printStackTrace(); // Handle FXML loading errors
                 }
             }
+        }else{
+            capacitylabel.setVisible(true);
+            capacityTextField.setVisible(true);
+            generer.setVisible(true);
         }
     }
 

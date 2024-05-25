@@ -123,11 +123,16 @@ public class SerieExercicesController {
     private TextField capacityTextField;
     @FXML
     private Button generer;
+    @FXML
+    private Label capacityLabel;
 
     public void initialize()
     {
         if(!ajouter)
         {
+            capacityLabel.setVisible(false);
+            generer.setVisible(false);
+            capacityTextField.setVisible(false);
             int existingViews = container.getChildren().size() - 1;
 
             // Remove existing views only if necessary
@@ -159,6 +164,10 @@ public class SerieExercicesController {
                     // Consider displaying a user-friendly error message
                 }
             }
+        }else{
+            capacityLabel.setVisible(true);
+            generer.setVisible(true);
+            capacityTextField.setVisible(true);
         }
     }
 
