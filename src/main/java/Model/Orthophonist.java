@@ -17,8 +17,10 @@ public class Orthophonist implements Serializable
     private String adresse;
     private String num_tel;
     private String email;
+    private Agenda agenda ;
     private TreeMap<Integer,Patient> listePatients;
     private String motDePasse;
+    private Compte compte;
 
     public Orthophonist(String nom, String prenom, String email,String motdepasse, String num_tel, String adresse)
     {
@@ -99,5 +101,9 @@ public class Orthophonist implements Serializable
 
     }
 
+
+    public Compte getCompte() {
+        return compte;
+    }
 
 }

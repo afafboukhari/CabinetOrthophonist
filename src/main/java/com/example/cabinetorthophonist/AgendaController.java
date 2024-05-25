@@ -1,15 +1,28 @@
 package com.example.cabinetorthophonist;
 
+import Model.OrthophonisteSessionManager;
+import Model.Rendez_vous;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.time.LocalDate;
+import java.util.Map;
+import java.util.ResourceBundle;
+import java.util.TreeMap;
+import java.util.stream.Collectors;
 
 public class AgendaController
 {
@@ -27,6 +40,9 @@ public class AgendaController
     private Label Profile;
     @FXML
     private Label deconnecter;
+
+    @FXML // fx:id="utilisateur1"
+    private Label utilisateur1;
 
 
     @FXML
@@ -100,4 +116,134 @@ public class AgendaController
             }
         }
     }
+
+    @FXML
+    void vue_consultation(ActionEvent event) {
+        try {
+            // Load the FXML file for the signup page
+            Parent signupRoot = FXMLLoader.load(getClass().getResource("Consultation.fxml"));
+            // Get the current stage
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            // Create a new scene with the signup root
+            Scene scene = new Scene(signupRoot, 1000, 670);
+
+            // Set the scene on the stage
+            stage.setScene(scene);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    @FXML
+    void vue_suivi(ActionEvent event) {
+        try {
+            // Load the FXML file for the signup page
+            Parent signupRoot = FXMLLoader.load(getClass().getResource("Suivi.fxml"));
+            // Get the current stage
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            // Create a new scene with the signup root
+            Scene scene = new Scene(signupRoot, 1000, 670);
+
+            // Set the scene on the stage
+            stage.setScene(scene);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @FXML
+    void vue_atelier(ActionEvent event) {
+        try {
+            // Load the FXML file for the signup page
+            Parent signupRoot = FXMLLoader.load(getClass().getResource("atelier.fxml"));
+            // Get the current stage
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            // Create a new scene with the signup root
+            Scene scene = new Scene(signupRoot, 1000, 670);
+
+            // Set the scene on the stage
+            stage.setScene(scene);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    @FXML
+        // This method is called by the FXMLLoader when initialization is complete
+    void initialize() throws IOException, ClassNotFoundException {
+
+        String nom = OrthophonisteSessionManager.getCurrentOrthophonisteName().getCompte().getNom();
+        System.out.println(nom);
+        String prenom =OrthophonisteSessionManager.getCurrentOrthophonisteName().getCompte().getPrenom();
+
+        utilisateur1.setText(nom + " " + prenom);
+
+
+        TreeMap<Rendez_vous, Dossier> futureRendezVous = rendezVous();
+
+        for (Map.Entry<Rendez_vous, Dossier> entry : futureRendezVous.entrySet()) {
+            Rendez_vous rendezVous = entry.getKey();
+            Dossier dossier = entry.getValue();
+
+            // Charger l'interface FXML pour chaque rendez-vous
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getResource("/com/example/tp_poo/Agendaligne.fxml"));
+            try {
+                HBox hBox = fxmlLoader.load();
+
+                // Remplir le tableau avec les informations du rendez-vous et du dossier
+                AgendaligneController cic = fxmlLoader.getController();
+                cic.remplir_tableau(rendezVous, dossier);
+
+                // Ajouter le HBox à l'interface principale
+                agendaligne.getChildren().add(hBox);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+    }
+
+    private TreeMap<Rendez_vous, Dossier> rendezVous() throws IOException, ClassNotFoundException {
+
+        Orthophoniste users =OrthophonisteSessionManager.getCurrentOrthophonisteName();
+
+        TreeMap<Integer, Dossier> dossiers = users.getMes_patients();
+
+
+        LocalDate now = LocalDate.now();
+
+        TreeMap<Rendez_vous, Dossier> futureRendezVous = new RendezVousManager().getFutureRendezVous(dossiers, now);
+
+
+        return futureRendezVous;
+    }
+
+    // Stub pour comparer les rendez-vous par date uniquement
+    public class RendezVousManager
+    {
+
+        public static TreeMap<Rendez_vous, Dossier> getFutureRendezVous(TreeMap<Integer, Dossier> dossiers, LocalDate now) {
+            return dossiers.entrySet().stream()
+                    .flatMap(entry -> entry.getValue().getRendez_vous().stream()
+                            .filter(rv -> !rv.getDate().isBefore(now))
+                            .map(rv -> Map.entry(rv, entry.getValue())))
+                    .collect(Collectors.toMap(
+                            Map.Entry::getKey,
+                            Map.Entry::getValue,
+                            (e1, e2) -> e1,
+                            TreeMap::new));
+        }
+
+    }
+
+
+
 }

@@ -3,6 +3,7 @@ package Model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Date;
 
 public    class  Patient implements Serializable {
 
@@ -67,6 +68,9 @@ public    class  Patient implements Serializable {
         this.prenom = prenom;
     }
 
+
+
+
     public LocalDate getDate_naissance() {
         return date_naissance;
     }
@@ -81,6 +85,7 @@ public    class  Patient implements Serializable {
 
     public void setLieu_naissance(String lieu_naissance) {
         this.lieu_naissance = lieu_naissance;
+
     }
 
     public String getAdresse() {
@@ -90,4 +95,5 @@ public    class  Patient implements Serializable {
     public void setAdresse(String adresse) {
         Adresse = adresse;
     }
+
 }
