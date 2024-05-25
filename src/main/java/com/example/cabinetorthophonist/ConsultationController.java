@@ -1,6 +1,6 @@
 package com.example.cabinetorthophonist;
 
-import javafx.event.ActionEvent;
+import javafx.application.Application;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -11,26 +11,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.ResourceBundle;
 
-public class AgendaController
-{
-    @FXML
-    private Label Agenda;
-    @FXML
-    private Label Patients;
-    @FXML
-    private Label BO;
-    @FXML
-    private Label FicheSuivi;
-    @FXML
-    private Label Testes;
-    @FXML
-    private Label Profile;
-    @FXML
-    private Label deconnecter;
-
+public class ConsultationController {
 
     @FXML
     public void handleRouting(MouseEvent event) {
@@ -104,63 +86,7 @@ public class AgendaController
         }
     }
 
-    @FXML
-    void vue_consultation(ActionEvent event) {
-        try {
-            // Load the FXML file for the signup page
-            Parent signupRoot = FXMLLoader.load(getClass().getResource("src/main/resources/com/example/cabinetorthophonist/Consultation.fxml"));
-            // Get the current stage
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            // Create a new scene with the signup root
-            Scene scene = new Scene(signupRoot, 1000, 670);
 
-            // Set the scene on the stage
-            stage.setScene(scene);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-    }
-
-    @FXML
-    void vue_suivi(ActionEvent event) {
-        try {
-            // Load the FXML file for the signup page
-            Parent signupRoot = FXMLLoader.load(getClass().getResource("/com/example/tp_poo/Suivi.fxml"));
-            // Get the current stage
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            // Create a new scene with the signup root
-            Scene scene = new Scene(signupRoot, 1000, 670);
-
-            // Set the scene on the stage
-            stage.setScene(scene);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
-
-    @FXML
-    void vue_atelier(ActionEvent event) {
-        try {
-            // Load the FXML file for the signup page
-            Parent signupRoot = FXMLLoader.load(getClass().getResource("/com/example/tp_poo/atelier.fxml"));
-            // Get the current stage
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            // Create a new scene with the signup root
-            Scene scene = new Scene(signupRoot, 1000, 670);
-
-            // Set the scene on the stage
-            stage.setScene(scene);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-
-    }
 
 }
+

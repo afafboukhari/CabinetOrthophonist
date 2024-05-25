@@ -1,30 +1,27 @@
 package Model;
-import java.time.LocalDate;
 
-public class Patient {
+import java.io.Serializable;
+import java.util.Date;
 
+public abstract class Patient implements Serializable
+{
     private String nom;
     private String prenom;
-    private LocalDate dateNaissance;
-    private String lieuNaissance;
+    private Date date_de_naissance;
+    private String lieu_naissance;
     private String adresse;
 
-    // Constructeur avec tous les paramètres
-    public Patient(String nom, String prenom, LocalDate dateNaissance, String lieuNaissance, String adresse) {
+    public Patient(String nom, String prenom, Date dateDeNaissance, String lieuNaissance, String adresse) {
         this.nom = nom;
         this.prenom = prenom;
-        this.dateNaissance = dateNaissance;
-        this.lieuNaissance = lieuNaissance;
+        this.date_de_naissance = dateDeNaissance;
+        this.lieu_naissance = lieuNaissance;
         this.adresse = adresse;
     }
 
-    // Getters et setters pour chaque attribut
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
+    public String getNom()
+    {
+        return this.nom;
     }
 
     public String getPrenom() {
@@ -35,20 +32,22 @@ public class Patient {
         this.prenom = prenom;
     }
 
-    public LocalDate getDateNaissance() {
-        return dateNaissance;
+
+    public Date getDate_de_naissance() {
+        return date_de_naissance;
     }
 
-    public void setDateNaissance(LocalDate dateNaissance) {
-        this.dateNaissance = dateNaissance;
+    public void setDate_de_naissance(Date date_de_naissance) {
+        this.date_de_naissance = date_de_naissance;
     }
 
-    public String getLieuNaissance() {
-        return lieuNaissance;
+    public String getLieu_naissance() {
+        return lieu_naissance;
     }
 
-    public void setLieuNaissance(String lieuNaissance) {
-        this.lieuNaissance = lieuNaissance;
+    public void setLieu_naissance(String lieu_naissance) {
+        this.lieu_naissance = lieu_naissance;
+
     }
 
     public String getAdresse() {
@@ -59,15 +58,4 @@ public class Patient {
         this.adresse = adresse;
     }
 
-    // Méthode toString pour afficher les informations du patient
-    @Override
-    public String toString() {
-        return "Patient{" +
-                "nom='" + nom + '\'' +
-                ", prenom='" + prenom + '\'' +
-                ", dateNaissance=" + dateNaissance +
-                ", lieuNaissance='" + lieuNaissance + '\'' +
-                ", adresse='" + adresse + '\'' +
-                '}';
-    }
 }
