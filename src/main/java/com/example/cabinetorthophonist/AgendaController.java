@@ -1,4 +1,4 @@
-package com.example.cabinetorthophonist;
+/*package com.example.cabinetorthophonist;
 
 import Model.OrthophonisteSessionManager;
 import Model.Rendez_vous;
@@ -247,3 +247,4 @@ public class AgendaController
 
 
 }
+*/

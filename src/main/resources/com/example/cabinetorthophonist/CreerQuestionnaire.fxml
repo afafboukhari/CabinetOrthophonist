@@ -232,7 +232,7 @@
                   </VBox>
                   <VBox prefHeight="200.0">
                      <children>
-                        <Label text="Capacité :">
+                        <Label fx:id="capacitylabel" text="Capacité :">
                            <font>
                               <Font size="20.0" />
                            </font>

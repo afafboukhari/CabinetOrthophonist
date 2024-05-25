@@ -1,5 +1,6 @@
 package com.example.cabinetorthophonist;
 
+import Model.OrthophonisteSessionManager;
 import Model.Questionnaire;
 import Model.SerieExercices;
 import javafx.event.ActionEvent;
@@ -20,6 +21,9 @@ import java.io.IOException;
 
 public class SerieExercicesController {
     static boolean ajouter;
+    static String titrestatic;
+    static String[][] tab1;
+    static int size;
     @FXML
     private Label Agenda;
     @FXML
@@ -120,6 +124,44 @@ public class SerieExercicesController {
     @FXML
     private Button generer;
 
+    public void initialize()
+    {
+        if(!ajouter)
+        {
+            int existingViews = container.getChildren().size() - 1;
+
+            // Remove existing views only if necessary
+            if (existingViews > 0) {
+                container.getChildren().remove(0, existingViews + 1); // Remove from index 1 (inclusive) to existingViews (exclusive)
+            }
+            titre.setText(titrestatic);
+            // Iterate through the loop based on capacity
+            for (int i = 0; i < size; i++) {
+                // Load the FXML for the exercise view
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("Exercice.fxml")); // Assuming "exercice.fxml" is the filename
+
+                try {
+                    VBox exerciceView = (VBox) loader.load(); // Load the FXML and get the root node (VBox)
+                    // Access elements within the exercise view (assuming IDs)
+                    Label consigneLabel = (Label) exerciceView.getChildren().get(0);
+                    TextField consigneField = (TextField) exerciceView.getChildren().get(1);
+                    HBox detailsBox = (HBox) exerciceView.getChildren().get(2); // Assuming details are in the third child (HBox)
+                    consigneField.setText(tab1[i][0]);
+                    TextField materielField = (TextField) detailsBox.getChildren().get(1); // Assuming "Materiel" label is the first child
+                    TextField nbrFoisField = (TextField) detailsBox.getChildren().get(3); // Assuming "Nombre de fois" label is the third child
+                    materielField.setText(tab1[i][1]);
+                    nbrFoisField.setText(tab1[i][2]);
+                    // Add the loaded exercise view to the container
+                    container.getChildren().add(exerciceView);
+
+                } catch (IOException e) {
+                    e.printStackTrace(); // Handle potential exception during FXML loading
+                    // Consider displaying a user-friendly error message
+                }
+            }
+        }
+    }
+
     @FXML
     public void generateExerciceViews(ActionEvent event) {
 
@@ -162,42 +204,82 @@ public class SerieExercicesController {
 
     @FXML
     public void create() {
-        String[][] tab;
-        int capacity = Integer.parseInt(capacityTextField.getText());
+        if(ajouter)
+        {
+            String[][] tab;
+            int capacity = Integer.parseInt(capacityTextField.getText());
 
-        // Allocate space for the 2D array based on capacity (adjust columns for options)
-        tab = new String[capacity][3]; // Adjust number of columns based on your number of choices
+            // Allocate space for the 2D array based on capacity (adjust columns for options)
+            tab = new String[capacity][3]; // Adjust number of columns based on your number of choices
 
-        // Iterate through the dynamically generated custom views
-        for (int i = 0; i < capacity; i++) {
-            VBox questionView = (VBox) container.getChildren().get(i); // Assuming first element is not a view
+            // Iterate through the dynamically generated custom views
+            for (int i = 0; i < capacity; i++) {
+                VBox questionView = (VBox) container.getChildren().get(i); // Assuming first element is not a view
 
-            // Access elements within the custom view (assuming IDs)
-            Label questionLabel = (Label) questionView.getChildren().get(0);
-            TextField questionTextField = (TextField) questionView.getChildren().get(1);
-            HBox choicesBox = (HBox) questionView.getChildren().get(2); // Assuming choices are in the third child
+                // Access elements within the custom view (assuming IDs)
+                Label questionLabel = (Label) questionView.getChildren().get(0);
+                TextField questionTextField = (TextField) questionView.getChildren().get(1);
+                HBox choicesBox = (HBox) questionView.getChildren().get(2); // Assuming choices are in the third child
 
-            String question = questionTextField.getText();
+                String question = questionTextField.getText();
 
-            // Store question in the first column of the array
-            tab[i][0] = question;
+                // Store question in the first column of the array
+                tab[i][0] = question;
 
-            // Iterate through choice TextFields within the HBox
-            for (int j = 1; j < choicesBox.getChildren().size(); j++) { // Start from index 1 (assuming "Choix" label is the first child)
-                TextField choiceField = (TextField) choicesBox.getChildren().get(j);
-                String choice = choiceField.getText().trim(); // Trim leading/trailing whitespace
+                // Iterate through choice TextFields within the HBox
+                for (int j = 1; j < choicesBox.getChildren().size(); j++) { // Start from index 1 (assuming "Choix" label is the first child)
+                    TextField choiceField = (TextField) choicesBox.getChildren().get(j);
+                    String choice = choiceField.getText().trim(); // Trim leading/trailing whitespace
 
-                // Store only non-empty choices (optional, adjust as needed)
-                if (!choice.isEmpty()) {
-                    System.out.println(i+" "+j);
-                    tab[i][j] = choice;
+                    // Store only non-empty choices (optional, adjust as needed)
+                    if (!choice.isEmpty()) {
+                        System.out.println(i+" "+j);
+                        tab[i][j] = choice;
+                    }
+                    j=3;
                 }
-                j=3;
             }
+
+            SerieExercices test = new SerieExercices(titre.getText(),tab,capacity);
+            OrthophonisteSessionManager.getCurrentOrthophonisteName().getMes_test().getSerieExercices().add(test);
+
+        }else{
+            String[][] tab;
+            // Allocate space for the 2D array based on capacity (adjust columns for options)
+            tab = new String[size][3]; // Adjust number of columns based on your number of choices
+
+            // Iterate through the dynamically generated custom views
+            for (int i = 0; i < size; i++) {
+                VBox questionView = (VBox) container.getChildren().get(i); // Assuming first element is not a view
+
+                // Access elements within the custom view (assuming IDs)
+                Label questionLabel = (Label) questionView.getChildren().get(0);
+                TextField questionTextField = (TextField) questionView.getChildren().get(1);
+                HBox choicesBox = (HBox) questionView.getChildren().get(2); // Assuming choices are in the third child
+
+                String question = questionTextField.getText();
+
+                // Store question in the first column of the array
+                tab[i][0] = question;
+
+                // Iterate through choice TextFields within the HBox
+                for (int j = 1; j < choicesBox.getChildren().size(); j++) { // Start from index 1 (assuming "Choix" label is the first child)
+                    TextField choiceField = (TextField) choicesBox.getChildren().get(j);
+                    String choice = choiceField.getText().trim(); // Trim leading/trailing whitespace
+
+                    // Store only non-empty choices (optional, adjust as needed)
+                    if (!choice.isEmpty()) {
+                        System.out.println(i+" "+j);
+                        tab[i][j] = choice;
+                    }
+                    j=3;
+                }
+            }
+            SerieExercices serie = OrthophonisteSessionManager.getCurrentOrthophonisteName().getMes_test().getbyTitleSerieExercices(titrestatic);
+            serie.setTitre(titre.getText());
+            serie.setExercice(tab);
+
         }
-
-        SerieExercices test = new SerieExercices(titre.getText(),tab,capacity);
-
         try {
             Parent next = (Parent)FXMLLoader.load(this.getClass().getResource("Testes.fxml"));
             Scene currentScene = this.enregistrer.getScene();

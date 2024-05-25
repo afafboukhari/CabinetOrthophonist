@@ -18,4 +18,8 @@ public class RepLibreController
     public Label getLabel() {
         return label;
     }
+    public TextField getQuestion()
+    {
+        return Question;
+    }
 }

@@ -216,7 +216,7 @@
                         <Image url="@../../../assets/images/stylo.png" />
                      </image>
                   </ImageView>
-                  <ComboBox prefHeight="46.0" prefWidth="625.0" promptText="Anamnese Adulte">
+                  <ComboBox fx:id="AnamneseAdulte" onAction="#handleComboBoxAction1" prefHeight="46.0" prefWidth="625.0" promptText="Anamnese Adulte">
                      <HBox.margin>
                         <Insets left="5.0" />
                      </HBox.margin>
@@ -230,7 +230,7 @@
                         <Image url="@../../../assets/images/stylo.png" />
                      </image>
                   </ImageView>
-                  <ComboBox prefHeight="46.0" prefWidth="625.0" promptText="Anamnese Enfant">
+                  <ComboBox fx:id="AnamneseEnfant" onAction="#handleComboBoxAction2" prefHeight="46.0" prefWidth="625.0" promptText="Anamnese Enfant">
                      <HBox.margin>
                         <Insets left="5.0" />
                      </HBox.margin>
@@ -244,7 +244,7 @@
                         <Image url="@../../../assets/images/stylo.png" />
                      </image>
                   </ImageView>
-                  <ComboBox prefHeight="46.0" prefWidth="625.0" promptText="QCM / QCU">
+                  <ComboBox fx:id="QCMQCU" onAction="#handleComboBoxAction3" prefHeight="46.0" prefWidth="625.0" promptText="QCM / QCU">
                      <HBox.margin>
                         <Insets left="5.0" />
                      </HBox.margin>
@@ -258,7 +258,7 @@
                         <Image url="@../../../assets/images/stylo.png" />
                      </image>
                   </ImageView>
-                  <ComboBox prefHeight="46.0" prefWidth="625.0" promptText="Serie exercices">
+                  <ComboBox fx:id="SerieExercice" onAction="#handleComboBoxAction4" prefHeight="46.0" prefWidth="625.0" promptText="Serie exercices">
                      <HBox.margin>
                         <Insets left="5.0" />
                      </HBox.margin>
@@ -272,7 +272,7 @@
                         <Image url="@../../../assets/images/stylo.png" />
                      </image>
                   </ImageView>
-                  <ComboBox prefHeight="46.0" prefWidth="625.0" promptText="Questionnaire á reponse libre">
+                  <ComboBox fx:id="QuestionnaireLibre" onAction="#handleComboBoxAction5" prefHeight="46.0" prefWidth="625.0" promptText="Questionnaire á reponse libre">
                      <HBox.margin>
                         <Insets left="5.0" />
                      </HBox.margin>

@@ -2,6 +2,7 @@ package com.example.cabinetorthophonist;
 
 import Model.AnamneseAdulte;
 import Model.AnamneseEnfant;
+import Model.OrthophonisteSessionManager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -19,7 +20,15 @@ import java.io.IOException;
 
 public class AnamneseEnfantController
 {
-    static boolean ajouter;
+    static boolean ajouter ;
+    static String titrestatic;
+    static String qst1static;
+    static String qst2static;
+    static String qst3static;
+    static String qst4static;
+    static String qst5static;
+    static String qst6static;
+    static String qst7static;
     @FXML
     private Label Agenda;
     @FXML
@@ -131,12 +140,33 @@ public class AnamneseEnfantController
     @FXML
     private Button enregistrer;
 
+    public void initialize()
+    {
+        titre.setText(titrestatic);
+        qst1.setText(qst1static);
+        qst2.setText(qst2static);
+        qst3.setText(qst3static);
+        qst4.setText(qst4static);
+        qst5.setText(qst5static);
+        qst6.setText(qst6static);
+        qst7.setText(qst7static);
+    }
+
     @FXML
     public void create()
     {
-        String[] tab = {qst1.getText(), qst2.getText(),qst3.getText(), qst4.getText(),qst5.getText(), qst6.getText(),qst7.getText()};
-        AnamneseEnfant test = new AnamneseEnfant(titre.getText(),tab);
-
+        System.out.println("enfant"+ajouter);
+        if(ajouter)
+        {
+            String[] tab = {qst1.getText(), qst2.getText(),qst3.getText(), qst4.getText(),qst5.getText(), qst6.getText(),qst7.getText()};
+            AnamneseEnfant test = new AnamneseEnfant(titre.getText(),tab);
+            OrthophonisteSessionManager.getCurrentOrthophonisteName().getMes_test().getAnamneseEnfants().add(test);
+        }else{
+            String[] tab = {qst1.getText(), qst2.getText(),qst3.getText(), qst4.getText(),qst5.getText(), qst6.getText(),qst7.getText()};
+            AnamneseEnfant anamneseEnfant = OrthophonisteSessionManager.getCurrentOrthophonisteName().getMes_test().getbyTitleAnamneseEnfant(titrestatic);
+            anamneseEnfant.setTitre(titre.getText());
+            anamneseEnfant.setQuestion(tab);
+        }
         try {
             Parent next = (Parent)FXMLLoader.load(this.getClass().getResource("Testes.fxml"));
             Scene currentScene = this.enregistrer.getScene();

@@ -12,10 +12,7 @@ public class AnamneseAdulte implements Serializable
 
     public AnamneseAdulte(String titre, String[] question) {
         this.titre = titre;
-        Question = question;
-        AnamneseAdulte anamneseAdulte = new AnamneseAdulte(titre,question);
-        OrthophonisteSessionManager.getCurrentOrthophonisteName().getMes_test().setAnamneseAdultes(anamneseAdulte);
-        System.out.println("sauvegardé avec succees !");
+        this.Question = question;
     }
 
     public String[] getQuestion() {
@@ -24,5 +21,13 @@ public class AnamneseAdulte implements Serializable
 
     public void setQuestion(String[] question) {
         Question = question;
+    }
+
+    public String getTitre() {
+        return titre;
+    }
+
+    public void setTitre(String titre) {
+        this.titre = titre;
     }
 }

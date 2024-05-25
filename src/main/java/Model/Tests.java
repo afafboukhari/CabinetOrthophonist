@@ -1,77 +1,89 @@
 package Model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Objects;
 
 public class Tests implements Serializable
 {
-    private AnamneseAdulte[] anamneseAdultes;
-    private int nbr1;
-    private AnamneseEnfant[] anamneseEnfants;
-    private int nbr2;
-    private Questionnaire[] questionnaires;
-    private int nbr3;
-    private QuestionnaireLibre[] questionnaireLibre;
-    private int nbr4;
-    private SerieExercices[] serieExercices;
-    private int nbr5;
+    private ArrayList<AnamneseAdulte> anamneseAdultes;
+    private ArrayList<AnamneseEnfant> anamneseEnfants;
+    private ArrayList<Questionnaire> questionnaires;
+    private ArrayList<QuestionnaireLibre> questionnaireLibre;
+    private ArrayList<SerieExercices> serieExercices;
 
-    public AnamneseAdulte[] getAnamneseAdultes() {
+    public Tests()
+    {
+        anamneseAdultes = new ArrayList<AnamneseAdulte>();
+        anamneseEnfants = new ArrayList<AnamneseEnfant>();
+        questionnaires = new ArrayList<Questionnaire>();
+        questionnaireLibre = new ArrayList<QuestionnaireLibre>();
+        serieExercices = new ArrayList<SerieExercices>();
+    }
+
+    public ArrayList<AnamneseAdulte> getAnamneseAdultes() {
         return anamneseAdultes;
     }
 
-    public void setAnamneseAdultes(AnamneseAdulte anamneseAdultes) {
-        this.anamneseAdultes[nbr1] = anamneseAdultes;
-    }
-
-    public AnamneseEnfant[] getAnamneseEnfants() {
+    public ArrayList<AnamneseEnfant> getAnamneseEnfants() {
         return anamneseEnfants;
     }
 
-    public void setAnamneseEnfants(AnamneseEnfant anamneseEnfants) {
-        this.anamneseEnfants[nbr2] = anamneseEnfants;
-    }
-
-    public Questionnaire[] getQuestionnaires() {
+    public ArrayList<Questionnaire> getQuestionnaires() {
         return questionnaires;
     }
 
-    public void setQuestionnaires(Questionnaire questionnaires) {
-        this.questionnaires[nbr3] = questionnaires;
-    }
-
-    public QuestionnaireLibre[] getQuestionnaireLibre() {
+    public ArrayList<QuestionnaireLibre> getQuestionnaireLibre() {
         return questionnaireLibre;
     }
 
-    public void setQuestionnaireLibre(QuestionnaireLibre questionnaireLibre) {
-        this.questionnaireLibre[nbr4] = questionnaireLibre;
-    }
-
-    public SerieExercices[] getSerieExercices() {
+    public ArrayList<SerieExercices> getSerieExercices() {
         return serieExercices;
     }
 
-    public void setSerieExercices(SerieExercices serieExercices) {
-        this.serieExercices[nbr5] = serieExercices;
+    public AnamneseAdulte getbyTitleAnamneseAdulte(String title) {
+        for (AnamneseAdulte anamnese : anamneseAdultes) {
+            if (Objects.equals(anamnese.getTitre(), title)) {
+                return anamnese;
+            }
+        }
+        return null;
     }
 
-    public void setNbrAnamneseAdulte(int nbr1) {
-        this.nbr1 = nbr1;
+    public AnamneseEnfant getbyTitleAnamneseEnfant(String title) {
+        for (AnamneseEnfant anamnese : anamneseEnfants) {
+            if (Objects.equals(anamnese.getTitre(), title)) {
+                return anamnese;
+            }
+        }
+        return null;
     }
 
-    public void setNbrAnamneseEnfant(int nbr2) {
-        this.nbr2 = nbr2;
+    public Questionnaire getbyTitleQuestionnaire(String title) {
+        for (Questionnaire anamnese : questionnaires) {
+            if (Objects.equals(anamnese.getTitre(), title)) {
+                return anamnese;
+            }
+        }
+        return null;
     }
 
-    public void setNbrQCMQCU(int nbr3) {
-        this.nbr3 = nbr3;
+    public QuestionnaireLibre getbyTitleQuestionnaireLibre(String title) {
+        for (QuestionnaireLibre anamnese : questionnaireLibre) {
+            if (Objects.equals(anamnese.getTitre(), title)) {
+                return anamnese;
+            }
+        }
+        return null;
     }
 
-    public void setNbrQuestionnaireLibre(int nbr4) {
-        this.nbr4 = nbr4;
+    public SerieExercices getbyTitleSerieExercices(String title) {
+        for (SerieExercices anamnese : serieExercices) {
+            if (Objects.equals(anamnese.getTitre(), title)) {
+                return anamnese;
+            }
+        }
+        return null;
     }
 
-    public void setNbrSerieExercice(int nbr5) {
-        this.nbr5 = nbr5;
-    }
 }
