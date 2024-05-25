@@ -32,6 +32,7 @@ public class Orthophonist implements Serializable
         this.email = email;
         this.motDePasse = motdepasse;
         mes_test = new Tests();
+        compte = new Compte(nom,prenom,num_tel,email,motdepasse,adresse);
         saveProfile(this);
     }
 

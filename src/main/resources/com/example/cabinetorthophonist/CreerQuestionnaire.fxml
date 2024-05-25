@@ -206,7 +206,7 @@
    <center>
       <VBox alignment="CENTER_LEFT" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Ajouter un sujet pour QCM/QCU :">
+            <Label fx:id="Firstlabel" text="Ajouter un sujet pour QCM/QCU :">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>

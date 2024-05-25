@@ -1,5 +1,6 @@
 package com.example.cabinetorthophonist;
 
+import Model.Orthophonist;
 import Model.OrthophonisteSessionManager;
 import Model.Questionnaire;
 import Model.QuestionnaireLibre;
@@ -87,14 +88,13 @@ public class QuestionnaireLibreController
                 break;
 
             case "Se déconnecter":
-//                Orthophonist user= OrthophonisteSessionManager.getCurrentOrthophonisteName();
-//                String username =user.getCompte().getEmail();
-//                String filepath="./src/main/Userinformation/" + username + ".ser";
-//                Orthophonist.serialize(filepath,user);
-//                newPage = true;
-//                PageRouter = "/com/example/tp_poo/Login.fxml";
+                Orthophonist user= OrthophonisteSessionManager.getCurrentOrthophonisteName();
+                String username =user.getCompte().getEmail();
+                String filepath="./src/main/Userinformation/" + username + ".ser";
+                user.saveProfile(user);
+                newPage = true;
+                PageRouter = "login-view.fxml";
                 break;
-
             default:
                 newPage = true;
                 PageRouter = "home-view.fxml";
@@ -126,6 +126,8 @@ public class QuestionnaireLibreController
     private Button generer;
     @FXML
     private Label capacityLabel;
+    @FXML
+    private Label Firstlabel;
 
     public void initialize()
     {
@@ -133,6 +135,9 @@ public class QuestionnaireLibreController
             capacityLabel.setVisible(false);
             generer.setVisible(false);
             capacityTextField.setVisible(false);
+            enregistrer.setText("Modifier");
+            Firstlabel.setText("Voici votre questionnaire ("+titrestatic+")");
+
             int existingViews = container.getChildren().size() - 1;
 
             // Remove existing views only if necessary

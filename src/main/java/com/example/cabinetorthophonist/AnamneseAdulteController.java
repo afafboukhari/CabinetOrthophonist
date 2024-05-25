@@ -1,6 +1,7 @@
 package com.example.cabinetorthophonist;
 
 import Model.AnamneseAdulte;
+import Model.Orthophonist;
 import Model.OrthophonisteSessionManager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -85,12 +86,12 @@ public class AnamneseAdulteController {
                 break;
 
             case "Se déconnecter":
-//                Orthophonist user= OrthophonisteSessionManager.getCurrentOrthophonisteName();
-//                String username =user.getCompte().getEmail();
-//                String filepath="./src/main/Userinformation/" + username + ".ser";
-//                Orthophonist.serialize(filepath,user);
-//                newPage = true;
-//                PageRouter = "/com/example/tp_poo/Login.fxml";
+                Orthophonist user= OrthophonisteSessionManager.getCurrentOrthophonisteName();
+                String username =user.getCompte().getEmail();
+                String filepath="./src/main/Userinformation/" + username + ".ser";
+                user.saveProfile(user);
+                newPage = true;
+                PageRouter = "login-view.fxml";
                 break;
 
             default:
@@ -131,7 +132,7 @@ public class AnamneseAdulteController {
         qst1.setText(qst1static);
         qst2.setText(qst2static);
         if (!ajouter) {
-            label.setText("Modifier le sujet d'anamnese : " + titrestatic);
+            label.setText("Voici votre sujet d'anamnese déstiné au adults (" + titrestatic+")");
             enregistrer.setText("Modifier");
         }
 
