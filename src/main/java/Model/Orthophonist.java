@@ -1,6 +1,8 @@
 package Model;
 
-import java.util.ArrayList;
+import com.sun.source.tree.Tree;
+
+import java.util.TreeMap;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -15,8 +17,8 @@ public class Orthophonist implements Serializable
     private String adresse;
     private String num_tel;
     private String email;
-    private ArrayList<Patient> listePatients;
     private Agenda agenda ;
+    private TreeMap<Integer,Patient> listePatients;
     private String motDePasse;
     private Compte compte;
 
@@ -28,6 +30,7 @@ public class Orthophonist implements Serializable
         this.num_tel = num_tel;
         this.email = email;
         this.motDePasse = motdepasse;
+        this.listePatients = new TreeMap<Integer,Patient>() ;
         saveProfile(this);
     }
 
@@ -67,7 +70,7 @@ public class Orthophonist implements Serializable
         return motDePasse;
     }
 
-    public ArrayList<Patient> getListPatient()
+    public TreeMap<Integer,Patient> getListPatient()
     {
         return listePatients;
     }
@@ -98,19 +101,6 @@ public class Orthophonist implements Serializable
 
     }
 
-    public static Orthophonist loadOrthophonist(String email) {
-        try {
-            FileInputStream fileIn = new FileInputStream(email + ".ser");
-            ObjectInputStream in = new ObjectInputStream(fileIn);
-            Orthophonist orthophonist = (Orthophonist)in.readObject();
-            in.close();
-            fileIn.close();
-            return orthophonist;
-        } catch (ClassNotFoundException | IOException var4) {
-            System.out.println("Une erreure est servenue : " + var4.getMessage());
-            return null;
-        }
-    }
 
     public Compte getCompte() {
         return compte;

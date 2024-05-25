@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55f40f0b-67cd-4bd2-aa4c-643dba37423c" name="Changes" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/src/main/java/Model/Compte.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/Model/Dossier.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/java/Model/OrthophonisteSessionManager.java" afterDir="false" />
@@ -17,6 +18,24 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/SuiviController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/SuiviController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/Agenda.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/Agenda.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/Consultation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/Consultation.fxml" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/QuestionnaireLibre.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/SerieExercices.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/ExerciceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/PageData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/QuestionnaireLibreController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/RepLibreController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/SerieExercicesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Adulte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Adulte.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Enfant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Enfant.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/TestesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/TestesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/TypetestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/TypetestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/CreerExercice.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/CreerExercice.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/Testes.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/Testes.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/typetest.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/typetest.fxml" afterDir="false" />
+>>>>>>> eb20e66771b7485887d5de0fbe11a43b02400856
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,10 +46,16 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
+<<<<<<< HEAD
         <option value="Class" />
         <option value="Enum" />
         <option value="FxmlFile" />
         <option value="JavaFXApplication" />
+=======
+        <option value="FxmlFile" />
+        <option value="Enum" />
+        <option value="Class" />
+>>>>>>> eb20e66771b7485887d5de0fbe11a43b02400856
       </list>
     </option>
   </component>
@@ -65,6 +90,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/hehea/IdeaProjects/CabinetOrthophonist",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -73,6 +99,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.cabinetorthophonist" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -90,7 +121,12 @@
       <option name="presentableId" value="Default" />
       <updated>1715989979644</updated>
       <workItem from="1715989980680" duration="3000" />
+<<<<<<< HEAD
       <workItem from="1716627570230" duration="14585000" />
+=======
+      <workItem from="1716560496690" duration="15375000" />
+      <workItem from="1716627222696" duration="5281000" />
+>>>>>>> eb20e66771b7485887d5de0fbe11a43b02400856
     </task>
     <servers />
   </component>
