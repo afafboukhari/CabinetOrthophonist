@@ -20,6 +20,7 @@ import java.io.IOException;
 
 public class QuestionnaireLibreController
 {
+    static boolean ajouter;
     @FXML
     private Label Agenda;
     @FXML

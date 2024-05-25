@@ -1,25 +1,21 @@
 package com.example.cabinetorthophonist;
 
 import Model.AnamneseAdulte;
-import Model.AnamneseEnfant;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import org.w3c.dom.events.Event;
-import org.w3c.dom.events.EventListener;
 
 import java.io.IOException;
+import java.util.Objects;
 
-public class AnamneseEnfantController
+public class TestexistController
 {
-    static boolean ajouter;
+
     @FXML
     private Label Agenda;
     @FXML
@@ -100,8 +96,9 @@ public class AnamneseEnfantController
         if (newPage) {
             try {
                 // Load the desired page
-                Parent nextPage = FXMLLoader.load(getClass().getResource(PageRouter));
-
+                Parent nextPage = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(PageRouter)));
+                PageData pageData = new PageData();
+                pageData.setSomeBooleanValue(true);
                 Stage Scene = (Stage) ((Node)event.getSource()).getScene().getWindow();
                 javafx.scene.Scene scene = new Scene(nextPage, 1000, 670);
                 Scene.setScene(scene);
@@ -112,39 +109,4 @@ public class AnamneseEnfantController
         }
     }
 
-    @FXML
-    private TextField titre;
-    @FXML
-    private TextField qst1;
-    @FXML
-    private TextField qst2;
-    @FXML
-    private TextField qst3;
-    @FXML
-    private TextField qst4;
-    @FXML
-    private TextField qst5;
-    @FXML
-    private TextField qst6;
-    @FXML
-    private TextField qst7;
-    @FXML
-    private Button enregistrer;
-
-    @FXML
-    public void create()
-    {
-        String[] tab = {qst1.getText(), qst2.getText(),qst3.getText(), qst4.getText(),qst5.getText(), qst6.getText(),qst7.getText()};
-        AnamneseEnfant test = new AnamneseEnfant(titre.getText(),tab);
-
-        try {
-            Parent next = (Parent)FXMLLoader.load(this.getClass().getResource("Testes.fxml"));
-            Scene currentScene = this.enregistrer.getScene();
-            currentScene.setRoot(next);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-    }
 }
