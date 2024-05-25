@@ -5,30 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55f40f0b-67cd-4bd2-aa4c-643dba37423c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Enum/QCM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Agenda.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Deroulement_seance.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Objectif.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/ObservationClinique.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Questionnaire.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Rendez_vous.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Suivi.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Type_objectif.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Type_rendez_vous.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/AtelierController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/ConsultationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/SuiviController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/images/ajouter.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/images/ecrire.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/Atelier.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/Consultation.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/Suivi.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Compte.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/Dossier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Model/OrthophonisteSessionManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Patient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Orthophonist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Orthophonist.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/AgendaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/AgendaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/PatientsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/PatientsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/AtelierController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/AtelierController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/ConsultationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/ConsultationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/SuiviController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/SuiviController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/Agenda.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/Agenda.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/Consultation.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/Consultation.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +63,7 @@
     "Application.Unnamed.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Merging main",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
@@ -102,7 +90,7 @@
       <option name="presentableId" value="Default" />
       <updated>1715989979644</updated>
       <workItem from="1715989980680" duration="3000" />
-      <workItem from="1716627570230" duration="2772000" />
+      <workItem from="1716627570230" duration="14585000" />
     </task>
     <servers />
   </component>

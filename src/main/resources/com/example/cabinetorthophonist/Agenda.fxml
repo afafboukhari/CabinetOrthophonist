@@ -235,7 +235,7 @@
                <children>
                   <Button fx:id="consultation" layoutX="78.0" layoutY="34.0" mnemonicParsing="false" onAction="#vue_consultation" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #bf2374;" styleClass="btn" text="Consultation" />
                   <Button fx:id="suivi" layoutX="318.0" layoutY="34.0" mnemonicParsing="false" onAction="#vue_suivi" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #bf2374;" styleClass="btn" text="Séance de suivi" textAlignment="CENTER" />
-                  <Button fx:id="atelier" layoutX="553.0" layoutY="34.0" mnemonicParsing="false" onAction="#vue_suivi" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #bf2374;" styleClass="btn" text="Séance Atelier" />
+                  <Button fx:id="atelier" layoutX="553.0" layoutY="34.0" mnemonicParsing="false" onAction="#vue_atelier" prefHeight="50.0" prefWidth="135.0" style="-fx-background-color: #bf2374;" styleClass="btn" text="Séance Atelier" />
                   <ImageView fitHeight="23.0" fitWidth="35.0" layoutX="78.0" layoutY="46.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../assets/images/PLUS1.png" />

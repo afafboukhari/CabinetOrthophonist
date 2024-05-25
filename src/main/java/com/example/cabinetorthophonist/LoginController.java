@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+
+import Model.OrthophonisteSessionManager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -42,8 +44,12 @@ public class LoginController
         String email = this.emailField.getText();
         String password = this.passwordField.getText();
         Orthophonist orthophonist = this.authenticate(email, password);
+
         if (orthophonist != null) {
+
             this.loadNextPage(orthophonist);
+            OrthophonisteSessionManager.setCurrentOrthophonisteName(orthophonist);
+            Orthophonist user1=OrthophonisteSessionManager.getCurrentOrthophonisteName();
         }
 
     }

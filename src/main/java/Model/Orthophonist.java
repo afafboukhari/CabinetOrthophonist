@@ -16,7 +16,9 @@ public class Orthophonist implements Serializable
     private String num_tel;
     private String email;
     private ArrayList<Patient> listePatients;
+    private Agenda agenda ;
     private String motDePasse;
+    private Compte compte;
 
     public Orthophonist(String nom, String prenom, String email,String motdepasse, String num_tel, String adresse)
     {
@@ -108,6 +110,10 @@ public class Orthophonist implements Serializable
             System.out.println("Une erreure est servenue : " + var4.getMessage());
             return null;
         }
+    }
+
+    public Compte getCompte() {
+        return compte;
     }
 
 }
