@@ -1,5 +1,6 @@
 package com.example.cabinetorthophonist;
 
+import Model.Dossier;
 import Model.OrthophonisteSessionManager;
 import Model.Rendez_vous;
 import javafx.event.ActionEvent;
