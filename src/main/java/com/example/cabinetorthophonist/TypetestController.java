@@ -1,5 +1,6 @@
 package com.example.cabinetorthophonist;
 
+import Model.AnamneseAdulte;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -14,6 +15,7 @@ import java.util.Objects;
 
 public class TypetestController
 {
+
     @FXML
     private Label Agenda;
     @FXML
@@ -94,8 +96,9 @@ public class TypetestController
         if (newPage) {
             try {
                 // Load the desired page
-                Parent nextPage = FXMLLoader.load(getClass().getResource(PageRouter));
-
+                Parent nextPage = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(PageRouter)));
+                PageData pageData = new PageData();
+                pageData.setSomeBooleanValue(true);
                 Stage Scene = (Stage) ((Node)event.getSource()).getScene().getWindow();
                 javafx.scene.Scene scene = new Scene(nextPage, 1000, 670);
                 Scene.setScene(scene);
@@ -146,17 +149,17 @@ public class TypetestController
 
             case "Serie d'exercice":
                 newPage = true;
-                PageRouter = "creertest.fxml";
+                PageRouter = "CreerExercice.fxml";
                 break;
 
             case "Questionnaire á reponses libres":
                 newPage = true;
-                PageRouter = "creertest.fxml";
+                PageRouter = "CreerRepLibres.fxml";
                 break;
 
             default:
                 newPage = true;
-                PageRouter = "Testes.fxml";
+                PageRouter = "CreerRepLibres.fxml";
                 break;
         }
         //  PageRouter = "/com/example/tp_poo/Login.fxml";
@@ -164,8 +167,8 @@ public class TypetestController
         if (newPage) {
             try {
                 // Load the desired page
+                System.out.println("hehehehehe");
                 Parent nextPage = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(PageRouter)));
-
                 Stage Scene = (Stage) ((Node)event.getSource()).getScene().getWindow();
                 javafx.scene.Scene scene = new Scene(nextPage, 1000, 670);
                 Scene.setScene(scene);
@@ -175,8 +178,5 @@ public class TypetestController
             }
         }
     }
-
-
-
 
 }

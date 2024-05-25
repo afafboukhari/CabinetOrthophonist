@@ -120,4 +120,19 @@ public class TestesController
             e.printStackTrace();
         }
     }
+
+    public void consultertest(MouseEvent event)
+    {
+        try {
+            String PageRouter = "typetest.fxml";
+            Parent nextPage = FXMLLoader.load(getClass().getResource(PageRouter));
+
+            Stage Scene = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            javafx.scene.Scene scene = new Scene(nextPage, 1000, 670);
+            Scene.setScene(scene);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

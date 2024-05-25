@@ -1,8 +1,9 @@
 package Model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Adulte extends Patient
+public class Adulte extends Patient implements Serializable
 {
 
     private String Dimplome;

@@ -203,7 +203,7 @@
    <center>
       <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Choisir le type de test que vous souhaitez creer :" underline="true">
+            <Label text="Choisir le type de test  :" underline="true">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
