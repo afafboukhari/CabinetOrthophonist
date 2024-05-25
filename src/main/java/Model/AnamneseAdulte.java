@@ -13,16 +13,9 @@ public class AnamneseAdulte implements Serializable
     public AnamneseAdulte(String titre, String[] question) {
         this.titre = titre;
         Question = question;
-        try {
-            FileOutputStream fileOut = new FileOutputStream("src/data/"+"AnamneseAdulte_"+titre+".ser");
-            ObjectOutputStream out = new ObjectOutputStream(fileOut);
-            out.writeObject(this);
-            out.close();
-            fileOut.close();
-            System.out.println("sauvegardé avec succees !");
-        } catch (IOException var3) {
-            System.out.println("Une erreure est servenue : " + var3.getMessage());
-        }
+        AnamneseAdulte anamneseAdulte = new AnamneseAdulte(titre,question);
+        OrthophonisteSessionManager.getCurrentOrthophonisteName().getMes_test().setAnamneseAdultes(anamneseAdulte);
+        System.out.println("sauvegardé avec succees !");
     }
 
     public String[] getQuestion() {

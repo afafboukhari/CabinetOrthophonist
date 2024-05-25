@@ -102,4 +102,11 @@ public class Orthophonist implements Serializable
         return compte;
     }
 
+    public Tests getMes_test() {
+        return mes_test;
+    }
+
+    public void setMes_test(Tests mes_test) {
+        this.mes_test = mes_test;
+    }
 }
