@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<HBox prefHeight="37.0" prefWidth="762.0" style="-fx-border-color: transparent;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cabinetorthophonist.AgendaligneController">
+    <children>
+        <Label fx:id="type" alignment="CENTER" contentDisplay="CENTER" prefHeight="44.0" prefWidth="118.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-border-radius: 15; -fx-background-radius: 15;" text="Type" textAlignment="CENTER">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Label fx:id="jour" alignment="CENTER" contentDisplay="CENTER" prefHeight="47.0" prefWidth="138.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-border-radius: 15; -fx-background-radius: 15;" text="Jour" textAlignment="CENTER">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Label fx:id="heure" alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="111.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-border-radius: 15; -fx-background-radius: 15;" text="Heure" textAlignment="CENTER">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Label fx:id="duree" alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="108.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-border-radius: 15; -fx-background-radius: 15;" text="Durée" textAlignment="CENTER">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <Label fx:id="num_dossier" alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="173.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-border-radius: 15; -fx-background-radius: 15;" text="Patients(Numéros dossiers)" textAlignment="CENTER">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+        <AnchorPane prefHeight="35.0" prefWidth="137.0">
+            <children>
+                <Button fx:id="action" alignment="CENTER_RIGHT" layoutX="21.0" layoutY="4.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="96.0" styleClass="btn1" stylesheets="@homecss.css" text="informations" textAlignment="RIGHT" />
+            <ImageView fitHeight="19.0" fitWidth="15.0" layoutX="25.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../assets/images/plus.png" />
+               </image>
+            </ImageView>
+               
+            </children>
+        </AnchorPane>
+    </children>
+</HBox>

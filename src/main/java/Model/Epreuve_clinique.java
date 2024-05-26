@@ -6,9 +6,9 @@ public class Epreuve_clinique  implements Serializable {
 
 
     private String[] Observations_cliniques;
-    private Test[] tests;
+    private Tests[] tests;
 
-    public Epreuve_clinique(String[] observations_cliniques, Test[] tests)
+    public Epreuve_clinique(String[] observations_cliniques, Tests[] tests)
     {
 
         Observations_cliniques = observations_cliniques;
@@ -26,12 +26,12 @@ public class Epreuve_clinique  implements Serializable {
         Observations_cliniques = observations_cliniques;
     }
 
-    public Test[] getTests()
+    public Tests[] getTests()
     {
         return tests;
     }
 
-    public void setTests(Test[] tests) {
+    public void setTests(Tests[] tests) {
         this.tests = tests;
     }
 }
