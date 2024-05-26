@@ -6,13 +6,13 @@ public class Compte implements Serializable {
 
     private String nom;
     private String prenom;
-    private int num_tlf;
+    private String num_tlf;
     private String email;
     private String Mot_pass;
     private String adresse;
 
 
-    public Compte(String nom, String prenom, int num_tlf, String email, String mot_pass, String adresse) {
+    public Compte(String nom, String prenom, String num_tlf, String email, String mot_pass, String adresse) {
         this.nom = nom;
         this.prenom = prenom;
         this.num_tlf = num_tlf;
@@ -39,11 +39,11 @@ public class Compte implements Serializable {
         this.prenom = prenom;
     }
 
-    public int getNum_tlf() {
+    public String getNum_tlf() {
         return num_tlf;
     }
 
-    public void setNum_tlf(int num_tlf) {
+    public void setNum_tlf(String num_tlf) {
         this.num_tlf = num_tlf;
     }
 

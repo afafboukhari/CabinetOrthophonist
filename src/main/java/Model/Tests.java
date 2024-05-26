@@ -1,52 +1,89 @@
 package Model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Objects;
 
 public class Tests implements Serializable
 {
-    private AnamneseAdulte[] anamneseAdultes;
-    private AnamneseEnfant[] anamneseEnfants;
-    private Questionnaire[] questionnaires;
-    private QuestionnaireLibre questionnaireLibre;
-    private SerieExercices[] serieExercices;
+    private ArrayList<AnamneseAdulte> anamneseAdultes;
+    private ArrayList<AnamneseEnfant> anamneseEnfants;
+    private ArrayList<Questionnaire> questionnaires;
+    private ArrayList<QuestionnaireLibre> questionnaireLibre;
+    private ArrayList<SerieExercices> serieExercices;
 
-    public AnamneseAdulte[] getAnamneseAdultes() {
+    public Tests()
+    {
+        anamneseAdultes = new ArrayList<AnamneseAdulte>();
+        anamneseEnfants = new ArrayList<AnamneseEnfant>();
+        questionnaires = new ArrayList<Questionnaire>();
+        questionnaireLibre = new ArrayList<QuestionnaireLibre>();
+        serieExercices = new ArrayList<SerieExercices>();
+    }
+
+    public ArrayList<AnamneseAdulte> getAnamneseAdultes() {
         return anamneseAdultes;
     }
 
-    public void setAnamneseAdultes(AnamneseAdulte[] anamneseAdultes) {
-        this.anamneseAdultes = anamneseAdultes;
-    }
-
-    public AnamneseEnfant[] getAnamneseEnfants() {
+    public ArrayList<AnamneseEnfant> getAnamneseEnfants() {
         return anamneseEnfants;
     }
 
-    public void setAnamneseEnfants(AnamneseEnfant[] anamneseEnfants) {
-        this.anamneseEnfants = anamneseEnfants;
-    }
-
-    public Questionnaire[] getQuestionnaires() {
+    public ArrayList<Questionnaire> getQuestionnaires() {
         return questionnaires;
     }
 
-    public void setQuestionnaires(Questionnaire[] questionnaires) {
-        this.questionnaires = questionnaires;
-    }
-
-    public QuestionnaireLibre getQuestionnaireLibre() {
+    public ArrayList<QuestionnaireLibre> getQuestionnaireLibre() {
         return questionnaireLibre;
     }
 
-    public void setQuestionnaireLibre(QuestionnaireLibre questionnaireLibre) {
-        this.questionnaireLibre = questionnaireLibre;
-    }
-
-    public SerieExercices[] getSerieExercices() {
+    public ArrayList<SerieExercices> getSerieExercices() {
         return serieExercices;
     }
 
-    public void setSerieExercices(SerieExercices[] serieExercices) {
-        this.serieExercices = serieExercices;
+    public AnamneseAdulte getbyTitleAnamneseAdulte(String title) {
+        for (AnamneseAdulte anamnese : anamneseAdultes) {
+            if (Objects.equals(anamnese.getTitre(), title)) {
+                return anamnese;
+            }
+        }
+        return null;
     }
+
+    public AnamneseEnfant getbyTitleAnamneseEnfant(String title) {
+        for (AnamneseEnfant anamnese : anamneseEnfants) {
+            if (Objects.equals(anamnese.getTitre(), title)) {
+                return anamnese;
+            }
+        }
+        return null;
+    }
+
+    public Questionnaire getbyTitleQuestionnaire(String title) {
+        for (Questionnaire anamnese : questionnaires) {
+            if (Objects.equals(anamnese.getTitre(), title)) {
+                return anamnese;
+            }
+        }
+        return null;
+    }
+
+    public QuestionnaireLibre getbyTitleQuestionnaireLibre(String title) {
+        for (QuestionnaireLibre anamnese : questionnaireLibre) {
+            if (Objects.equals(anamnese.getTitre(), title)) {
+                return anamnese;
+            }
+        }
+        return null;
+    }
+
+    public SerieExercices getbyTitleSerieExercices(String title) {
+        for (SerieExercices anamnese : serieExercices) {
+            if (Objects.equals(anamnese.getTitre(), title)) {
+                return anamnese;
+            }
+        }
+        return null;
+    }
+
 }

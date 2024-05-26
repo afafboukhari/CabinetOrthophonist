@@ -1,5 +1,7 @@
 package com.example.cabinetorthophonist;
 
+import Model.Orthophonist;
+import Model.OrthophonisteSessionManager;
 import Model.Questionnaire;
 import Model.QuestionnaireLibre;
 import javafx.event.ActionEvent;
@@ -21,6 +23,9 @@ import java.io.IOException;
 public class QuestionnaireLibreController
 {
     static boolean ajouter;
+    static String titrestatic;
+    static String[] tab1;
+    static int size;
     @FXML
     private Label Agenda;
     @FXML
@@ -83,14 +88,13 @@ public class QuestionnaireLibreController
                 break;
 
             case "Se déconnecter":
-//                Orthophonist user= OrthophonisteSessionManager.getCurrentOrthophonisteName();
-//                String username =user.getCompte().getEmail();
-//                String filepath="./src/main/Userinformation/" + username + ".ser";
-//                Orthophonist.serialize(filepath,user);
-//                newPage = true;
-//                PageRouter = "/com/example/tp_poo/Login.fxml";
+                Orthophonist user= OrthophonisteSessionManager.getCurrentOrthophonisteName();
+                String username =user.getCompte().getEmail();
+                String filepath="./src/main/Userinformation/" + username + ".ser";
+                user.saveProfile(user);
+                newPage = true;
+                PageRouter = "login-view.fxml";
                 break;
-
             default:
                 newPage = true;
                 PageRouter = "home-view.fxml";
@@ -120,6 +124,45 @@ public class QuestionnaireLibreController
     private TextField capacityTextField;
     @FXML
     private Button generer;
+    @FXML
+    private Label capacityLabel;
+    @FXML
+    private Label Firstlabel;
+
+    public void initialize()
+    {
+        if(!ajouter) {
+            capacityLabel.setVisible(false);
+            generer.setVisible(false);
+            capacityTextField.setVisible(false);
+            enregistrer.setText("Modifier");
+            Firstlabel.setText("Voici votre questionnaire ("+titrestatic+")");
+
+            int existingViews = container.getChildren().size() - 1;
+
+            // Remove existing views only if necessary
+            if (existingViews > 0) {
+                container.getChildren().remove(0, existingViews + 1); // Remove from index 1 (inclusive) to existingViews (exclusive)
+            }
+            titre.setText(titrestatic);
+            for (int i = 0; i < size; i++) {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("ReponseLibre.fxml")); // Load your FXML
+                try {
+                    VBox questionView = loader.load(); // Load the custom view
+                    RepLibreController controller = loader.getController(); // Access the custom view's controller (if needed)
+                    controller.getLabel().setText("Question " + (i + 1) + " :"); // Set question text (optional)
+                    controller.getQuestion().setText(tab1[i]);
+                    container.getChildren().add(questionView);
+                } catch (IOException e) {
+                    e.printStackTrace(); // Handle FXML loading errors
+                }
+            }
+        }else{
+            capacityLabel.setVisible(true);
+            generer.setVisible(true);
+            capacityTextField.setVisible(true);
+        }
+    }
 
     public void generateTextFields(ActionEvent event) {
         int existingViews = container.getChildren().size() - 1;
@@ -148,30 +191,52 @@ public class QuestionnaireLibreController
 
     @FXML
     public void create() {
-        int capacity = Integer.parseInt(capacityTextField.getText());
-
-        // Allocate space for the 2D array based on capacity (adjust columns for options)
-        String[] tab = new String[capacity]; // Adjust number of columns based on your number of choices
-
-        // Iterate through the dynamically generated custom views
-        for (int i = 0; i < capacity; i++)
+        if(ajouter)
         {
-            VBox questionView = (VBox) container.getChildren().get(i); // Assuming first element is not a view
+            int capacity = Integer.parseInt(capacityTextField.getText());
+            // Allocate space for the 2D array based on capacity (adjust columns for options)
+            String[] tab = new String[capacity]; // Adjust number of columns based on your number of choices
+            // Iterate through the dynamically generated custom views
+            for (int i = 0; i < capacity; i++)
+            {
+                VBox questionView = (VBox) container.getChildren().get(i); // Assuming first element is not a view
 
-            // Access elements within the custom view (assuming IDs)
-            Label questionLabel = (Label) questionView.getChildren().get(0);
-            TextField questionTextField = (TextField) questionView.getChildren().get(1);
+                // Access elements within the custom view (assuming IDs)
+                Label questionLabel = (Label) questionView.getChildren().get(0);
+                TextField questionTextField = (TextField) questionView.getChildren().get(1);
 
-            String question = questionTextField.getText();
+                String question = questionTextField.getText();
 
-            // Store question in the first column of the array
-            System.out.println(question);
-            tab[i] = question;
+                // Store question in the first column of the array
+                System.out.println(question);
+                tab[i] = question;
+            }
+            QuestionnaireLibre test = new QuestionnaireLibre(titre.getText(),tab,capacity);
+            OrthophonisteSessionManager.getCurrentOrthophonisteName().getMes_test().getQuestionnaireLibre().add(test);
+
+
+        }else{
+            // Allocate space for the 2D array based on capacity (adjust columns for options)
+            String[] tab = new String[size]; // Adjust number of columns based on your number of choices
+            // Iterate through the dynamically generated custom views
+            for (int i = 0; i < size; i++)
+            {
+                VBox questionView = (VBox) container.getChildren().get(i); // Assuming first element is not a view
+
+                // Access elements within the custom view (assuming IDs)
+                Label questionLabel = (Label) questionView.getChildren().get(0);
+                TextField questionTextField = (TextField) questionView.getChildren().get(1);
+
+                String question = questionTextField.getText();
+
+                // Store question in the first column of the array
+                System.out.println(question);
+                tab[i] = question;
+            }
+            QuestionnaireLibre questionnaireLibre = OrthophonisteSessionManager.getCurrentOrthophonisteName().getMes_test().getbyTitleQuestionnaireLibre(titrestatic);
+            questionnaireLibre.setTitre(titre.getText());
+            questionnaireLibre.setQuestion(tab);
         }
-
-
-        QuestionnaireLibre test = new QuestionnaireLibre(titre.getText(),tab,capacity);
-
         try {
             Parent next = (Parent)FXMLLoader.load(this.getClass().getResource("Testes.fxml"));
             Scene currentScene = this.enregistrer.getScene();

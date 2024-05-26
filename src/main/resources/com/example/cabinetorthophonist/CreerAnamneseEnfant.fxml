@@ -204,7 +204,7 @@
    <center>
       <VBox alignment="CENTER_LEFT" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Ajouter un sujet pour anamnese Enfant :">
+            <Label fx:id="label" text="Ajouter un sujet pour anamnese Enfant :">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>

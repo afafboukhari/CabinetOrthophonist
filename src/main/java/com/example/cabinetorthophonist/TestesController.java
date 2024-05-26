@@ -1,5 +1,8 @@
 package com.example.cabinetorthophonist;
 
+import Model.AnamneseEnfant;
+import Model.Orthophonist;
+import Model.OrthophonisteSessionManager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -75,12 +78,12 @@ public class TestesController
                 break;
 
             case "Se déconnecter":
-//                Orthophonist user= OrthophonisteSessionManager.getCurrentOrthophonisteName();
-//                String username =user.getCompte().getEmail();
-//                String filepath="./src/main/Userinformation/" + username + ".ser";
-//                Orthophonist.serialize(filepath,user);
-//                newPage = true;
-//                PageRouter = "/com/example/tp_poo/Login.fxml";
+                Orthophonist user= OrthophonisteSessionManager.getCurrentOrthophonisteName();
+                String username =user.getCompte().getEmail();
+                String filepath="./src/main/Userinformation/" + username + ".ser";
+                user.saveProfile(user);
+                newPage = true;
+                PageRouter = "login-view.fxml";
                 break;
 
             default:
@@ -106,10 +109,15 @@ public class TestesController
     }
 
 
+
     public void ajoutertest(MouseEvent event)
     {
         try {
             AnamneseAdulteController.ajouter = true;
+            AnamneseEnfantController.ajouter = true;
+            QuestionnaireController.ajouter = true;
+            QuestionnaireLibreController.ajouter = true;
+            SerieExercicesController.ajouter = true;
             String PageRouter = "typetest.fxml";
             Parent nextPage = FXMLLoader.load(getClass().getResource(PageRouter));
 
@@ -126,6 +134,10 @@ public class TestesController
     {
         try {
             AnamneseAdulteController.ajouter = false;
+            AnamneseEnfantController.ajouter = false;
+            QuestionnaireController.ajouter = false;
+            QuestionnaireLibreController.ajouter = false;
+            SerieExercicesController.ajouter = false;
             String PageRouter = "testexist.fxml";
             Parent nextPage = FXMLLoader.load(getClass().getResource(PageRouter));
 

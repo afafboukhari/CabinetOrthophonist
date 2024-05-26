@@ -1,6 +1,8 @@
 package com.example.cabinetorthophonist;
 
 import Model.AnamneseAdulte;
+import Model.Orthophonist;
+import Model.OrthophonisteSessionManager;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -16,9 +18,12 @@ import org.w3c.dom.events.EventListener;
 
 import java.io.IOException;
 
-public class AnamneseAdulteController
-{
+public class AnamneseAdulteController {
     static boolean ajouter;
+    static String titrestatic = "";
+    static String qst1static = "";
+    static String qst2static = "";
+
     @FXML
     private Label Agenda;
     @FXML
@@ -81,12 +86,12 @@ public class AnamneseAdulteController
                 break;
 
             case "Se déconnecter":
-//                Orthophonist user= OrthophonisteSessionManager.getCurrentOrthophonisteName();
-//                String username =user.getCompte().getEmail();
-//                String filepath="./src/main/Userinformation/" + username + ".ser";
-//                Orthophonist.serialize(filepath,user);
-//                newPage = true;
-//                PageRouter = "/com/example/tp_poo/Login.fxml";
+                Orthophonist user= OrthophonisteSessionManager.getCurrentOrthophonisteName();
+                String username =user.getCompte().getEmail();
+                String filepath="./src/main/Userinformation/" + username + ".ser";
+                user.saveProfile(user);
+                newPage = true;
+                PageRouter = "login-view.fxml";
                 break;
 
             default:
@@ -101,7 +106,7 @@ public class AnamneseAdulteController
                 // Load the desired page
                 Parent nextPage = FXMLLoader.load(getClass().getResource(PageRouter));
 
-                Stage Scene = (Stage) ((Node)event.getSource()).getScene().getWindow();
+                Stage Scene = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 javafx.scene.Scene scene = new Scene(nextPage, 1000, 670);
                 Scene.setScene(scene);
 
@@ -119,22 +124,39 @@ public class AnamneseAdulteController
     private TextField qst2;
     @FXML
     private Button enregistrer;
+    @FXML
+    private Label label;
+
+    public void initialize() {
+        titre.setText(titrestatic);
+        qst1.setText(qst1static);
+        qst2.setText(qst2static);
+        if (!ajouter) {
+            label.setText("Voici votre sujet d'anamnese déstiné au adults (" + titrestatic+")");
+            enregistrer.setText("Modifier");
+        }
+
+    }
 
     @FXML
-    public void create()
-    {
-        System.out.println(ajouter);
-        String[] tab = {qst1.getText(), qst2.getText()};
-        AnamneseAdulte test = new AnamneseAdulte(titre.getText(),tab);
-
+    public void create() {
+        if (ajouter) {
+            String[] tab = {qst1.getText(), qst2.getText()};
+            AnamneseAdulte test = new AnamneseAdulte(titre.getText(), tab);
+            OrthophonisteSessionManager.getCurrentOrthophonisteName().getMes_test().getAnamneseAdultes().add(test);
+        } else {
+            String[] tab = {qst1.getText(), qst2.getText()};
+            AnamneseAdulte anamneseAdulte = OrthophonisteSessionManager.getCurrentOrthophonisteName().getMes_test().getbyTitleAnamneseAdulte(titrestatic);
+            anamneseAdulte.setTitre(titre.getText());
+            anamneseAdulte.setQuestion(tab);
+        }
         try {
-            Parent next = (Parent)FXMLLoader.load(this.getClass().getResource("Testes.fxml"));
+            Parent next = (Parent) FXMLLoader.load(this.getClass().getResource("Testes.fxml"));
             Scene currentScene = this.enregistrer.getScene();
             currentScene.setRoot(next);
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }

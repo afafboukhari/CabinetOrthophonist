@@ -206,7 +206,7 @@
    <center>
       <VBox alignment="CENTER_LEFT" BorderPane.alignment="CENTER">
          <children>
-            <Label text="Ajouter un sujet pour série exercice :">
+            <Label fx:id="FirstLabel" text="Ajouter un sujet pour série exercice :">
                <font>
                   <Font name="System Bold" size="20.0" />
                </font>
@@ -232,7 +232,7 @@
                   </VBox>
                   <VBox prefHeight="200.0">
                      <children>
-                        <Label text="Capacité :">
+                        <Label fx:id="capacityLabel" text="Capacité :">
                            <font>
                               <Font size="20.0" />
                            </font>

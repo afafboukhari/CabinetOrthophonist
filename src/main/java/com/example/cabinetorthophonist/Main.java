@@ -10,9 +10,7 @@ import java.util.Objects;
 
 public class Main extends Application {
     public Main()
-    {
-
-    }
+    {}
 
     public void start(Stage primaryStage) throws Exception {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("login-view.fxml")));

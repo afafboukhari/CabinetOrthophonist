@@ -34,6 +34,8 @@ public class Orthophonist implements Serializable
         this.num_tel = num_tel;
         this.email = email;
         this.motDePasse = motdepasse;
+        mes_test = new Tests();
+        compte = new Compte(nom,prenom,num_tel,email,motdepasse,adresse);
         saveProfile(this);
     }
 
@@ -153,4 +155,11 @@ public class Orthophonist implements Serializable
     }
 
 
+    public Tests getMes_test() {
+        return mes_test;
+    }
+
+    public void setMes_test(Tests mes_test) {
+        this.mes_test = mes_test;
+    }
 }
