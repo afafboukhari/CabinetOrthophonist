@@ -4,54 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55f40f0b-67cd-4bd2-aa4c-643dba37423c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/data/w.ser" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/z.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/AnamneseAdulte_.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/AnamneseAdulte_aa.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/AnamneseAdulte_adhd.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/AnamneseAdulteanamnese1.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/AnamneseAdultet3eebt.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/AnamneseEnfantwiiiiiiiii.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/QCM_QCU_QCM1.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/QuestionnaireRepLibre_a.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/QuestionnaireRepLibre_wiwi.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Questionnaire_aaa.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Questionnaire_aaaa.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Questionnaire_aaaaa.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Questionnaire_qqq.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/SerieExercices_serie.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/amerimene3948@gmail.com.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/fof@malfof.com.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/mimene@mm.com.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/ugg.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/AnamneseAdulte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/AnamneseAdulte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/AnamneseEnfant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/AnamneseEnfant.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Compte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Compte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Orthophonist.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Orthophonist.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Questionnaire.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Questionnaire.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/QuestionnaireLibre.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/QuestionnaireLibre.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/SerieExercices.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/SerieExercices.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Tests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/AgendaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/AgendaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/AnamneseAdulteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/AnamneseAdulteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/AnamneseEnfantController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/AnamneseEnfantController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/QuestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/QuestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/QuestionnaireController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/QuestionnaireController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/QuestionnaireLibreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/QuestionnaireLibreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/RepLibreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/RepLibreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/SerieExercicesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/SerieExercicesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/TestesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/TestesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/TestexistController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/TestexistController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/TypetestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/TypetestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/CreerAnamneseAdulte.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/CreerAnamneseAdulte.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/CreerAnamneseEnfant.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/CreerAnamneseEnfant.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/CreerExercice.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/CreerExercice.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/CreerQuestionnaire.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/CreerQuestionnaire.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/CreerRepLibres.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/CreerRepLibres.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/testexist.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/testexist.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="55f40f0b-67cd-4bd2-aa4c-643dba37423c" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,7 +49,7 @@
     "Application.Main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "Merging main",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/hehea/IdeaProjects/CabinetOrthophonist",
     "list.type.of.created.stylesheet": "CSS",
