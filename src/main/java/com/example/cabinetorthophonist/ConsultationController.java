@@ -1,8 +1,6 @@
 package com.example.cabinetorthophonist;
 
-import Model.OrthophonisteSessionManager;
-import Model.Patient;
-import Model.Type_rendez_vous;
+import Model.*;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -10,10 +8,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -135,7 +130,7 @@ public class ConsultationController {
 //                String filepath="./src/main/Userinformation/" + username + ".ser";
 //                Orthophonist.serialize(filepath,user);
 //                newPage = true;
-//                PageRouter = "/com/example/tp_poo/Login.fxml";
+//                PageRouter = "Login.fxml";
                 break;
 
             default:
@@ -143,7 +138,7 @@ public class ConsultationController {
                 PageRouter = "home-view.fxml";
                 break;
         }
-        //  PageRouter = "/com/example/tp_poo/Login.fxml";
+        //  PageRouter = "Login.fxml";
 
         if (newPage) {
             try {
@@ -159,7 +154,7 @@ public class ConsultationController {
             }
         }
     }
-
+    @FXML
     void calcule_durée(KeyEvent event)
     {
 
@@ -181,8 +176,7 @@ public class ConsultationController {
     }
 
 
-    public void enregistrer(ActionEvent event)
-    {
+    public void enregistrer(ActionEvent event) {
         resetErrorMessages();
 
         // Récupérer les valeurs des champs
@@ -215,10 +209,8 @@ public class ConsultationController {
         if (ageText.isEmpty()) {
             ageerror.setText("Le champ âge ne doit pas être vide.");
             allFieldsValid = false;
-        } else
-        {
-            try
-            {
+        } else {
+            try {
                 age = Integer.parseInt(ageText);
             } catch (NumberFormatException e) {
                 ageerror.setText("L'âge doit être un nombre valide.");
@@ -230,7 +222,7 @@ public class ConsultationController {
         if (date == null) {
             jourrror.setText("La date de consultation ne doit pas être vide.");
             allFieldsValid = false;
-        }else {
+        } else {
             if (date.isBefore(LocalDate.now())) {
                 // La date est antérieure à aujourd'hui, afficher un message d'erreur
                 jourrror.setText("La date est antérieure à aujourd'hui.");
@@ -248,7 +240,7 @@ public class ConsultationController {
         if (heureText.isEmpty()) {
             houreerror11.setText("L'heure de consultation ne doit pas être vide.");
             allFieldsValid = false;
-        }else {
+        } else {
             try {
                 LocalTime.parse(heureText); // Essayer de parser l'heure
 
@@ -259,36 +251,35 @@ public class ConsultationController {
         }
 
         // Si toutes les vérifications passent, procéder à la création du dossier
-       /* Dossier dossier = new Dossier();
+        Dossier dossier = new Dossier();
         int num = dossier.getNumero();
         if (allFieldsValid) {
             Patient patient;
             if (age >= 18) {
-                patient = new Adulte(Nom, Prenom,num);
+                patient = new Adulte(Nom, Prenom, num);
             } else {
-                patient = new Enfant(Nom, Prenom,num);
+                patient = new Enfant(Nom, Prenom, num);
             }
             dossier.setPatient(patient);
-            LocalTime time =LocalTime.parse(heureText);
-            Consultation consultation =new Consultation(date,time, Type_rendez_vous.CONSULTATION,Nom,Prenom,age,dureeText);
+            LocalTime time = LocalTime.parse(heureText);
+            Consultation consultation = new Consultation(date, time, Type_rendez_vous.CONSULTATION, Nom, Prenom, age, dureeText);
 
             dossier.add_rendez_vous(consultation);
             OrthophonisteSessionManager.getCurrentOrthophonisteName().add_patient(dossier);
-            Orthophoniste user =OrthophonisteSessionManager.getCurrentOrthophonisteName();
+            Orthophonist user = OrthophonisteSessionManager.getCurrentOrthophonisteName();
             user.getAgenda().add_rendez_vous(consultation);
-            afficherMessageSucces("La consultation est ajouter avec succés");*/
-
+            afficherMessageSucces("La consultation est ajouter avec succés");
 
 
             try {
 
                 // Load the desired page
-                String PageRouter ="Agenda.fxml";
+                String PageRouter = "Agenda.fxml";
                 Parent nextPage = FXMLLoader.load(getClass().getResource(PageRouter));
 
                 // You need to set the new page in the current scene or open a new window
                 // Example for setting the new page in the current scene:
-                Stage Scene = (Stage) ((Node)event.getSource()).getScene().getWindow();
+                Stage Scene = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 Scene scene = new Scene(nextPage, 1000, 670);
                 Scene.setScene(scene);
 
@@ -296,6 +287,7 @@ public class ConsultationController {
                 e.printStackTrace();
             }
         }
+    }
 
     private void resetErrorMessages() {
         nameerror.setText("");
@@ -306,6 +298,14 @@ public class ConsultationController {
         jourrror.setText("");
     }
 
+    private void afficherMessageSucces(String message) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Succès");
+        alert.setHeaderText(null);
+        alert.setContentText(message);
+        alert.showAndWait();
+    }
+    @FXML
     void retour(ActionEvent event)
     {
         try {
@@ -323,9 +323,9 @@ public class ConsultationController {
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
-          String nom = OrthophonisteSessionManager.getCurrentOrthophonisteName().getCompte().getNom();
+          String nom = OrthophonisteSessionManager.getCurrentOrthophonisteName().getNom();
           System.out.println(nom);
-          String prenom =OrthophonisteSessionManager.getCurrentOrthophonisteName().getCompte().getPrenom();
+          String prenom =OrthophonisteSessionManager.getCurrentOrthophonisteName().getPrenom();
 
           utilisateur1.setText(nom + " " + prenom);
 

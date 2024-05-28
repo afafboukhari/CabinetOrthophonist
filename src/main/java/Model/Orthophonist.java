@@ -22,9 +22,12 @@ public class Orthophonist implements Serializable
     private Tests mes_test;
     private String motDePasse;
     private Compte compte;
+    private TreeMap<Integer,Dossier> Mes_dossiers;
 
     public Orthophonist(String nom, String prenom, String email,String motdepasse, String num_tel, String adresse)
     {
+        this.Mes_dossiers = new TreeMap<Integer,Dossier >();
+        this.agenda = new Agenda();
         this.nom = nom;
         this.prenom = prenom;
         this.adresse = adresse;
@@ -72,6 +75,15 @@ public class Orthophonist implements Serializable
         return motDePasse;
     }
 
+    public TreeMap<Integer, Dossier> getMes_dossiers() {
+        return Mes_dossiers;
+    }
+
+    public TreeMap< Integer,Dossier > getMes_patients()
+    {
+        return Mes_dossiers;
+    }
+
     // Les setters :
     public void setNom(String nom)
     {
@@ -103,6 +115,45 @@ public class Orthophonist implements Serializable
     public Compte getCompte() {
         return compte;
     }
+    public void add_patient(Dossier dossier)
+    {
+        Mes_dossiers.put(dossier.getNumero(),dossier);
+
+    }
+    public Agenda getAgenda() {
+        return agenda;
+    }
+
+    public Dossier rechercher_patient(int n)
+    {
+
+        if (Mes_dossiers!=null)
+        {
+            if(Mes_dossiers.containsKey(n))
+            {
+                return Mes_dossiers.get(n);}
+            else
+            {
+                return null;
+            }
+        }
+        return null;
+    }
+
+    public void add_rendez_vous_patient(int num,Rendez_vous rendez_vous){
+
+        if (Mes_dossiers.containsKey(num)) {
+
+            Dossier dossier = Mes_dossiers.get(num);
+            dossier.add_rendez_vous(rendez_vous);
+            Dossier dossier1 =Mes_dossiers.put(num,dossier);
+
+        } else {
+            System.out.println("La clé '" + num + "' n'est pas présente dans le TreeMap.");
+        }
+
+    }
+
 
     public Tests getMes_test() {
         return mes_test;

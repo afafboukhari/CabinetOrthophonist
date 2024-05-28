@@ -1,5 +1,7 @@
-/*package com.example.cabinetorthophonist;
+package com.example.cabinetorthophonist;
 
+import Model.Dossier;
+import Model.Orthophonist;
 import Model.OrthophonisteSessionManager;
 import Model.Rendez_vous;
 import javafx.event.ActionEvent;
@@ -14,6 +16,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -41,8 +44,17 @@ public class AgendaController
     @FXML
     private Label deconnecter;
 
+    @FXML // ResourceBundle that was given to the FXMLLoader
+    private ResourceBundle resources;
+
+    @FXML // URL location of the FXML file that was given to the FXMLLoader
+    private URL location;
+
     @FXML // fx:id="utilisateur1"
     private Label utilisateur1;
+
+    @FXML // fx:id="agendaligne"
+    private VBox agendaligne;
 
 
     @FXML
@@ -88,11 +100,11 @@ public class AgendaController
 
             case "Se déconnecter":
 //                Orthophonist user= OrthophonisteSessionManager.getCurrentOrthophonisteName();
-//                String username =user.getCompte().getEmail();
+//                String username =user.getEmail();
 //                String filepath="./src/main/Userinformation/" + username + ".ser";
 //                Orthophonist.serialize(filepath,user);
 //                newPage = true;
-//                PageRouter = "/com/example/tp_poo/Login.fxml";
+//                PageRouter = "Login.fxml";
                 break;
 
             default:
@@ -100,7 +112,7 @@ public class AgendaController
                 PageRouter = "home-view.fxml";
                 break;
         }
-        //  PageRouter = "/com/example/tp_poo/Login.fxml";
+        //  PageRouter = "Login.fxml";
 
         if (newPage) {
             try {
@@ -180,9 +192,9 @@ public class AgendaController
         // This method is called by the FXMLLoader when initialization is complete
     void initialize() throws IOException, ClassNotFoundException {
 
-        String nom = OrthophonisteSessionManager.getCurrentOrthophonisteName().getCompte().getNom();
+        String nom = OrthophonisteSessionManager.getCurrentOrthophonisteName().getNom();
         System.out.println(nom);
-        String prenom =OrthophonisteSessionManager.getCurrentOrthophonisteName().getCompte().getPrenom();
+        String prenom =OrthophonisteSessionManager.getCurrentOrthophonisteName().getPrenom();
 
         utilisateur1.setText(nom + " " + prenom);
 
@@ -195,7 +207,7 @@ public class AgendaController
 
             // Charger l'interface FXML pour chaque rendez-vous
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("/com/example/tp_poo/Agendaligne.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("Agendaligne.fxml"));
             try {
                 HBox hBox = fxmlLoader.load();
 
@@ -211,23 +223,24 @@ public class AgendaController
         }
     }
 
-    private TreeMap<Rendez_vous, Dossier> rendezVous() throws IOException, ClassNotFoundException {
+    private TreeMap<Rendez_vous, Dossier> rendezVous() throws IOException, ClassNotFoundException
+    {
 
-        Orthophoniste users =OrthophonisteSessionManager.getCurrentOrthophonisteName();
+        Orthophonist users =OrthophonisteSessionManager.getCurrentOrthophonisteName();
 
         TreeMap<Integer, Dossier> dossiers = users.getMes_patients();
 
 
         LocalDate now = LocalDate.now();
 
-        TreeMap<Rendez_vous, Dossier> futureRendezVous = new RendezVousManager().getFutureRendezVous(dossiers, now);
+        TreeMap<Rendez_vous, Dossier> futureRendezVous = RendezVousManager.getFutureRendezVous(dossiers, now);
 
 
         return futureRendezVous;
     }
 
     // Stub pour comparer les rendez-vous par date uniquement
-    public class RendezVousManager
+    public static class RendezVousManager
     {
 
         public static TreeMap<Rendez_vous, Dossier> getFutureRendezVous(TreeMap<Integer, Dossier> dossiers, LocalDate now) {
@@ -247,4 +260,3 @@ public class AgendaController
 
 
 }
-*/

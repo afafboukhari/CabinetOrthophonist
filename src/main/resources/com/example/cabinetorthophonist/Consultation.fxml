@@ -245,12 +245,12 @@
                                 <Font name="System Bold" size="12.0" />
                             </font>
                         </TextField>
-                        <TextField fx:id="heure" alignment="TOP_LEFT" layoutX="78.0" layoutY="274.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="241.0" promptText="Heure" styleClass="white-background">
+                        <TextField fx:id="heure" alignment="TOP_LEFT" layoutX="78.0" layoutY="274.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="241.0" promptText="00:00" styleClass="white-background">
                             <cursor>
                                 <Cursor fx:constant="NE_RESIZE" />
                             </cursor>
                         </TextField>
-                        <Label fx:id="nameerror" layoutX="67.0" layoutY="329.0" prefHeight="17.0" prefWidth="244.0" textFill="RED">
+                        <Label fx:id="nameerror" layoutX="76.0" layoutY="144.0" prefHeight="17.0" prefWidth="244.0" textFill="RED">
                             <font>
                                 <Font size="10.0" />
                             </font>
@@ -260,12 +260,12 @@
                             <font>
                                 <Font size="16.0" />
                             </font></Button>
-                        <Button fx:id="retour" layoutX="68.0" layoutY="393.0" mnemonicParsing="false" onAction="#enregistrer" prefHeight="39.0" prefWidth="237.0" style="-fx-background-color: BF2374FF; -fx-text-fill: black;" styleClass="btn" text="Retour">
+                        <Button fx:id="retour" layoutX="68.0" layoutY="393.0" mnemonicParsing="false" onAction="#retour" prefHeight="39.0" prefWidth="237.0" style="-fx-background-color: BF2374FF; -fx-text-fill: black;" styleClass="btn" text="Retour">
                             <font>
                                 <Font size="16.0" />
                             </font>
                         </Button>
-                  <TextField fx:id="Age" alignment="TOP_LEFT" layoutX="77.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="241.0" promptText="Age" styleClass="white-background">
+                  <TextField fx:id="Age" alignment="TOP_LEFT" layoutX="77.0" layoutY="200.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onKeyReleased="#calcule_durée" prefHeight="30.0" prefWidth="241.0" promptText="Age" styleClass="white-background">
                      <cursor>
                         <Cursor fx:constant="NE_RESIZE" />
                      </cursor>

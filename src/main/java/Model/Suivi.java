@@ -45,7 +45,7 @@ public class Suivi extends Rendez_vous {
 
     public String getPatientName() {
         // Récupérer l'orthophoniste actuel
-        /*Orthophoniste orthophoniste = OrthophonisteSessionManager.getCurrentOrthophonisteName();
+        Orthophonist orthophoniste = OrthophonisteSessionManager.getCurrentOrthophonisteName();
 
         // Vérifier si le patient avec le numéro de dossier existe
         if (orthophoniste.getMes_patients().containsKey(this.numero_dossier)) {
@@ -60,13 +60,13 @@ public class Suivi extends Rendez_vous {
         return "nom";
     }
     public Patient getPatient(){
-        Orthophoniste orthophoniste = OrthophonisteSessionManager.getCurrentOrthophonisteName();
+        Orthophonist orthophoniste = OrthophonisteSessionManager.getCurrentOrthophonisteName();
         // Vérifier si le patient avec le numéro de dossier existe
         if (orthophoniste.getMes_patients().containsKey(this.numero_dossier)) {
             // Récupérer le patient
             Patient patient = orthophoniste.getMes_patients().get(this.numero_dossier).getPatient();
             return patient;
-        }*/
+        }
 
         // Retourner "nom" si le patient n'existe pas
         return null;
