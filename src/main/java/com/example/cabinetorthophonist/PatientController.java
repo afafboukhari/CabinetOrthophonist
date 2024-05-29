@@ -13,6 +13,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -20,10 +21,7 @@ import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
-import java.util.TreeSet;
+import java.util.*;
 
 
 public class PatientController implements Initializable {
@@ -76,12 +74,12 @@ public class PatientController implements Initializable {
                 break;
 
             case "Se déconnecter":
-//                Orthophonist user= OrthophonisteSessionManager.getCurrentOrthophonisteName();
-//                String username =user.getCompte().getEmail();
-//                String filepath="./src/main/Userinformation/" + username + ".ser";
-//                Orthophonist.serialize(filepath,user);
-//                newPage = true;
-//                PageRouter = "/com/example/tp_poo/Login.fxml";
+                Orthophonist user= OrthophonisteSessionManager.getCurrentOrthophonisteName();
+                String username =user.getCompte().getEmail();
+                String filepath="./src/main/Userinformation/" + username + ".ser";
+                user.saveProfile(user);
+                newPage = true;
+                PageRouter = "login-view.fxml";
                 break;
 
             default:
@@ -128,27 +126,27 @@ public class PatientController implements Initializable {
         Orthophonist user=OrthophonisteSessionManager.getCurrentOrthophonisteName();
         utilisateur1.setText(user.getNom() + " " + user.getPrenom());
 
-      /*  TreeMap<Integer, Dossier> patients = user.getMes_patients();
+        TreeMap<Integer, Dossier> patients = user.getMes_patients();
 
-        Projet_therapeu po =new Projet_therapeu("description du projet dorthophoniste ");
+       /* Projet_therapeu po =new Projet_therapeu("description du projet dorthophoniste ");
         String[] observations = {
                 "Patient is experiencing mild headaches.",
                 "No signs of fever.",
                 "Blood pressure is within normal range."
-        };
+        };*/
 
         // Create some example questions for the written test
-        Question[] questions = new Question[]{
+        /*Question[] questions = new Question[]{
                 new question_libre("What is the capital of France?",1, "Paris"),
                 new question_libre("Explain the process of photosynthesis.", 2,"Photosynthesis is the process by which green plants and some other organisms use sunlight to synthesize foods with the help of chlorophyll."),
                 new question_libre("What is the chemical symbol for water?",3, "H2O")
-        };
+        };*/
 
-        Exercice exo1=         new Exercice("Do 10 push-ups.", "Matteriel",4);
+       /* Exercice exo1=         new Exercice("Do 10 push-ups.", "Matteriel",4);
         Exercice exo2=         new Exercice("Run for 5 minutes.", "Running shoes",5);
 
         // Create a written test with these questions
-        Test_questions writtenTest = new Test_questions("General Knowledge Test", 100, questions);
+        Tests_questions writtenTest = new Test_questions("General Knowledge Test", 100, questions);
         ArrayList<Exercice> n = new ArrayList<>();
         n.add(exo1);
         n.add(exo2);
@@ -156,10 +154,10 @@ public class PatientController implements Initializable {
 
 
         // Create an exercise test with these exercises
-        Test_exercice exerciseTest = new Test_exercice("Physical Fitness Test", 50, n);
+        Tests_exercice exerciseTest = new Tests_exercice("Physical Fitness Test", 50, n);
 
         // Create an array of tests (in this case, just one written test)
-        Test[] tests = new Test[]{writtenTest,writtenTest,exerciseTest,writtenTest,writtenTest,writtenTest,writtenTest,writtenTest};
+        Tests[] tests = new Tests[]{writtenTest,writtenTest,exerciseTest,writtenTest,writtenTest,writtenTest,writtenTest,writtenTest};
 
         // Create the Epreuve_clinique instance with the observations and the test
         Epreuve_clinique epreuve = new Epreuve_clinique(observations, tests);
@@ -181,7 +179,7 @@ public class PatientController implements Initializable {
 
         BO b =new BO(s,diagnostique,po);
         bos.add(b);
-        bos.add(b);
+        bos.add(b);*/
 
 
 
@@ -213,9 +211,9 @@ public class PatientController implements Initializable {
             }
 
         }
-        nombre_adultes.setText(String.valueOf(adultes));
-        nombre_enfants.setText(String.valueOf(enfants));
-        nombre_totales.setText(String.valueOf(adultes+enfants)); */
+//        nombre_adultes.setText(String.valueOf(adultes));
+//        nombre_enfants.setText(String.valueOf(enfants));
+//        nombre_totales.setText(String.valueOf(adultes+enfants));
     }
     public void  patientt() throws IOException, ClassNotFoundException {
 

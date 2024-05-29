@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cabinetorthophonist.PatientController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cabinetorthophonist.RendezvousPatientController">
     <left>
         <VBox prefHeight="600.0" prefWidth="235.0" styleClass="anchorpane" BorderPane.alignment="CENTER">
             <children>
@@ -217,11 +217,11 @@
                                         <Insets />
                                     </opaqueInsets>
                                 </Label>
-                                <AnchorPane layoutX="587.0" layoutY="24.0" prefHeight="33.0" prefWidth="170.0" style="-fx-background-radius: 20;" styleClass="anchorpane1" stylesheets="@../../../../../../../../Projet%202cp/RAHMAA/src/main/resources/directory/design.css">
+                                <AnchorPane layoutX="587.0" layoutY="24.0" prefHeight="33.0" prefWidth="170.0" style="-fx-background-radius: 20;" styleClass="anchorpane1" stylesheets="@homecss.css">
                                     <children>
                                         <ImageView fitHeight="23.0" fitWidth="25.0" layoutX="10.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
                                             <image>
-                                                <Image url="@../../../../../../../../Projet%202cp/RAHMAA/src/main/resources/images/Patient/loupe.png" />
+                                                <Image url="@../../../assets/images/loupe.png" />
                                             </image>
                                         </ImageView>
                                         <TextField layoutX="33.0" prefHeight="31.0" prefWidth="131.0" promptText="Rechercher" style="-fx-background-color: transparent; -fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: transparent;">
@@ -253,7 +253,7 @@
                               <Font name="System Bold Italic" size="14.0" />
                            </font>
                         </Label>
-                        <Label fx:id="numfiche11" alignment="CENTER" contentDisplay="CENTER" layoutX="478.0" layoutY="25.0" prefHeight="58.0" prefWidth="116.0" style="-fx-background-color: #b9f2ff; -fx-text-fill: black;" styleClass="textfield" stylesheets="@../../../../../../../../Projet%202cp/RAHMAA/src/main/resources/directory/design.css" textAlignment="JUSTIFY" textFill="WHITE">
+                        <Label fx:id="numfiche11" alignment="CENTER" contentDisplay="CENTER" layoutX="478.0" layoutY="25.0" prefHeight="58.0" prefWidth="116.0" style="-fx-background-color: #b9f2ff; -fx-text-fill: black;" styleClass="textfield" stylesheets="@homecss.css" textAlignment="JUSTIFY" textFill="WHITE">
                            <font>
                               <Font size="30.0" />
                            </font>
@@ -265,7 +265,7 @@
                 </VBox>
                 <AnchorPane prefHeight="593.0" prefWidth="765.0">
                     <children>
-                        <Label contentDisplay="CENTER" layoutX="10.0" layoutY="-1.0" prefHeight="54.0" prefWidth="330.0" style="-fx-position-shape: center; -fx-text-fill: #bf2374;" text=" Consulter Les Dossiers :" textFill="#bf2374">
+                        <Label contentDisplay="CENTER" layoutX="10.0" layoutY="-1.0" prefHeight="70.0" prefWidth="515.0" style="-fx-position-shape: center; -fx-text-fill: #bf2374;" text=" Consulter Les Rendez-vous de votre  patient :" textFill="#bf2374">
                             <font>
                                 <Font name="System Bold" size="20.0" />
                             </font>
@@ -276,42 +276,13 @@
                                 <Insets />
                             </opaqueInsets>
                         </Label>
-                        <HBox layoutX="11.0" layoutY="68.0" prefHeight="22.0" prefWidth="764.0" style="-fx-background-color: #d2e8fe;">
-                            <children>
-                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="23.0" prefWidth="117.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-border-radius: 15; -fx-background-radius: 15;" text="Numéro Dossier" textAlignment="CENTER">
-                                    <font>
-                                        <Font size="14.0" />
-                                    </font>
-                                </Label>
-                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="22.0" prefWidth="154.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-border-radius: 15; -fx-background-radius: 15;" text="Nom" textAlignment="CENTER">
-                                    <font>
-                                        <Font size="14.0" />
-                                    </font>
-                                </Label>
-                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="23.0" prefWidth="124.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-border-radius: 15; -fx-background-radius: 15;" text="Prénom" textAlignment="CENTER">
-                                    <font>
-                                        <Font size="14.0" />
-                                    </font>
-                                </Label>
-                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="22.0" prefWidth="136.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-border-radius: 15; -fx-background-radius: 15;" text="Date naissance" textAlignment="CENTER">
-                                    <font>
-                                        <Font size="14.0" />
-                                    </font>
-                                </Label>
-                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="23.0" prefWidth="210.0" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-border-radius: 15; -fx-background-radius: 15;" text=" Dossier médicale" textAlignment="CENTER">
-                                    <font>
-                                        <Font size="14.0" />
-                                    </font>
-                                </Label>
-                            </children>
-                        </HBox>
                         <VBox layoutX="10.0" layoutY="97.0">
                             <children>
                                 <HBox prefHeight="434.0" prefWidth="764.0">
                                     <children>
                                         <ScrollPane prefHeight="378.0" prefWidth="752.0">
                                             <content>
-                                                <VBox />
+                                                <VBox fx:id="patientslay" />
                                             </content>
                                         </ScrollPane>
                                     </children>
