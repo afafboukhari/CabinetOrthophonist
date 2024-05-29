@@ -3,16 +3,18 @@
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cabinetorthophonist.FicheDeSuiviController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cabinetorthophonist.EvaluerFicheController">
     <left>
         <VBox prefHeight="600.0" prefWidth="235.0" styleClass="anchorpane" BorderPane.alignment="CENTER">
             <children>
@@ -202,59 +204,100 @@
       <URL value="@homecss.css" />
    </stylesheets>
    <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" spacing="8.0" BorderPane.alignment="CENTER">
          <children>
-            <AnchorPane>
+            <Text fill="#b84775" strokeType="OUTSIDE" strokeWidth="0.0" text="Evaluer une fiche de suivi :">
+               <font>
+                  <Font name="System Bold" size="25.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="20.0" top="20.0" />
+               </VBox.margin>
+            </Text>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Numero de dossier de patient :">
+               <VBox.margin>
+                  <Insets left="10.0" top="15.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <TextField fx:id="numero_dossier">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </TextField>
+            <HBox alignment="CENTER_RIGHT" prefHeight="70.0" prefWidth="765.0">
                <children>
-                  <Label contentDisplay="CENTER" layoutX="14.0" prefHeight="75.0" prefWidth="527.0" style="-fx-position-shape: center;" text="Consulter ,Creer et Evaluer les  Fiches de suivi:" textFill="#b84775e5" underline="true">
+                  <Button fx:id="Evaluer" mnemonicParsing="false" onAction="#generateText" prefHeight="40.0" prefWidth="85.0" style="-fx-background-color: #b84775;" text="Evaluer" textFill="WHITE">
                      <font>
-                        <Font name="System Bold" size="20.0" />
+                        <Font size="18.0" />
                      </font>
-                     <padding>
-                        <Insets bottom="20.0" right="50.0" top="20.0" />
-                     </padding>
-                     <opaqueInsets>
-                        <Insets />
-                     </opaqueInsets>
-                  </Label>
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
                </children>
-            </AnchorPane>
-            <AnchorPane prefHeight="451.0" prefWidth="765.0">
+            </HBox>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="les objectifs de cette fiche :">
+               <VBox.margin>
+                  <Insets left="20.0" top="50.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="765.0" spacing="7.0">
                <children>
-                  <VBox layoutX="1.0" layoutY="-2.0" prefHeight="595.0" prefWidth="764.0">
-                     <children>
-                        <HBox prefHeight="594.0" prefWidth="764.0">
-                           <children>
-                              <AnchorPane prefHeight="556.0" prefWidth="763.0">
-                                 <children>
-                                    <Label layoutX="275.0" layoutY="227.0" onMouseClicked="#creerfichesuivi" prefHeight="27.0" prefWidth="200.0" text="Creer Une Fiche de Suivi">
-                                       <font>
-                                          <Font name="System Bold" size="16.0" />
-                                       </font>
-                                    </Label>
-                                    <ImageView fx:id="creerfichesuivi" fitHeight="201.0" fitWidth="186.0" layoutX="289.0" layoutY="41.0" onMouseClicked="#creerfichesuivi" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../../../../TP_POO/src/main/resources/images/fichesuivi/ajouter-une-tache.png" />
-                                       </image>
-                                    </ImageView>
-                                    <ImageView fx:id="evaluerfiche" fitHeight="211.0" fitWidth="204.0" layoutX="280.0" layoutY="278.0" onMouseClicked="#evaluerfiche" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../../../../../../TP_POO/src/main/resources/images/fichesuivi/liste-de-controle1.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Label layoutX="268.0" layoutY="482.0" onMouseClicked="#evaluerfiche" prefHeight="27.0" prefWidth="227.0" text="Evaluer Une Fiche de Suivi ">
-                                       <font>
-                                          <Font name="System Bold" size="16.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                              </AnchorPane>
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
+                  <Text fx:id="objectif1" strokeType="OUTSIDE" strokeWidth="0.0" text="Objectif1" wrappingWidth="665.6944847106934">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <CheckBox mnemonicParsing="false" prefHeight="27.0" prefWidth="68.0" text="atteint" />
                </children>
-            </AnchorPane>
+               <VBox.margin>
+                  <Insets left="10.0" top="15.0" />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="765.0" spacing="7.0">
+               <children>
+                  <Text fx:id="objectif2" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="668.8944969177246">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Text>
+                  <CheckBox mnemonicParsing="false" prefHeight="27.0" prefWidth="68.0" text="atteint" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="765.0" spacing="7.0">
+               <children>
+                  <Text fx:id="objectif3" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="668.8944969177246">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </Text>
+                  <CheckBox mnemonicParsing="false" prefHeight="27.0" prefWidth="68.0" text="atteint" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#enregistrer_evaluation" prefHeight="40.0" prefWidth="130.0" style="-fx-background-color: #b84775;" text="Enregistrer" textFill="WHITE">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets right="20.0" />
+               </VBox.margin>
+            </HBox>
          </children>
       </VBox>
    </center>

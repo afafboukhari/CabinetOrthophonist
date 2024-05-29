@@ -6,8 +6,7 @@ public class Fiche_suivi implements Serializable {
     static int num ;
     Patient patient;
     private Objectif[] objectifs;
-
-
+    private boolean atteint = false;
 
     public  int getNum() {
         return num;
@@ -33,5 +32,13 @@ public class Fiche_suivi implements Serializable {
 
     public Objectif[] getObjectifs() {
         return objectifs;
+    }
+
+    public boolean isAtteint() {
+        return atteint;
+    }
+
+    public void setAtteint(boolean atteint) {
+        this.atteint = atteint;
     }
 }

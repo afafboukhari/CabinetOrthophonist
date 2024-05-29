@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="55f40f0b-67cd-4bd2-aa4c-643dba37423c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/AjouterFicheController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/EvaluerFicheController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/q.ser" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Dossier.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Dossier.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/w.ser" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/w.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Model/Fiche_suivi.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Fiche_suivi.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Model/Patient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Model/Patient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/BOAnamneseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/BOAnamneseController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/FicheDeSuiviController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/cabinetorthophonist/FicheDeSuiviController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/images/plus.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/images/plus.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/BO-Anamnese.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/BO-Anamnese.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/FicheDeSuivi.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/FicheDeSuivi.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/evaluerfiche.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/cabinetorthophonist/evaluerfiche.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
