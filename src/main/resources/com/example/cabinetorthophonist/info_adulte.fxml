@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
-<?import org.controlsfx.control.CheckComboBox?>
 <?import java.net.URL?>
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cabinetorthophonist.AtelierController">
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cabinetorthophonist.info_adulteController">
     <left>
         <VBox prefHeight="600.0" prefWidth="235.0" styleClass="anchorpane" BorderPane.alignment="CENTER">
             <children>
@@ -196,75 +203,115 @@
     <center>
         <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
             <children>
-                <VBox prefHeight="89.0" prefWidth="765.0">
+                <AnchorPane prefHeight="645.0" prefWidth="765.0">
                     <children>
-                        <HBox alignment="CENTER_LEFT" prefHeight="111.0" prefWidth="765.0">
+                        <VBox layoutX="1.0" layoutY="81.0">
                             <children>
-                                <Label prefHeight="79.0" prefWidth="314.0" text=" Nouvelle séance Atelier : " textAlignment="RIGHT" textFill="#bf2374">
-                                    <font>
-                                        <Font name="System Bold" size="24.0" />
-                                    </font>
-                                </Label>
+                                <HBox prefHeight="604.0" prefWidth="720.0">
+                                    <children>
+                              <AnchorPane prefHeight="566.0" prefWidth="676.0">
+                                 <children>
+                                    <TextField fx:id="nom" alignment="TOP_LEFT" disable="true" layoutX="71.0" layoutY="149.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="241.0" promptText="Nom" styleClass="white-background">
+                                       <cursor>
+                                          <Cursor fx:constant="NE_RESIZE" />
+                                       </cursor>
+                                    </TextField>
+                                    <Label layoutX="73.0" layoutY="120.0" text="Nom du patient:" />
+                                    <Label layoutX="433.0" layoutY="120.0" text="Prénom du patient:" />
+                                    <TextField fx:id="prenom" alignment="TOP_LEFT" disable="true" layoutX="433.0" layoutY="148.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="241.0" promptText="Prénom" styleClass="white-background">
+                                       <cursor>
+                                          <Cursor fx:constant="NE_RESIZE" />
+                                       </cursor>
+                                    </TextField>
+                                    <Label layoutX="71.0" layoutY="204.0" text="Lieu de naissance:" />
+                                    <TextField fx:id="lieu" alignment="TOP_LEFT" layoutX="71.0" layoutY="232.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="241.0" promptText="Lieu de naissance" styleClass="white-background">
+                                       <cursor>
+                                          <Cursor fx:constant="NE_RESIZE" />
+                                       </cursor>
+                                    </TextField>
+                                    <Label layoutX="434.0" layoutY="203.0" text="Date de naissance:" />
+                                    <DatePicker fx:id="date_naiss" layoutX="433.0" layoutY="231.0" prefHeight="30.0" prefWidth="241.0" promptText="JJ/MM/AAAA" styleClass="white-background" />
+                                    <Label layoutX="72.0" layoutY="281.0" text="Adresse:" />
+                                    <Button fx:id="enregistrer" layoutX="431.0" layoutY="484.0" mnemonicParsing="false" onAction="#enregistrer" prefHeight="33.0" prefWidth="244.0" style="-fx-background-color: #b9f2ff; -fx-text-fill: black;" styleClass="btn" text="Enregistrer">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="retour" layoutX="73.0" layoutY="484.0" mnemonicParsing="false" onAction="#retour" prefHeight="33.0" prefWidth="246.0" style="-fx-background-color: #bf2374; -fx-text-fill: black;" styleClass="btn1" text="Retour">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Button>
+                                    <TextField fx:id="adresse" alignment="TOP_LEFT" layoutX="71.0" layoutY="308.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="241.0" promptText="Adresse" styleClass="white-background">
+                                       <cursor>
+                                          <Cursor fx:constant="NE_RESIZE" />
+                                       </cursor>
+                                    </TextField>
+                                    <Label fx:id="lieuerror" layoutX="71.0" layoutY="262.0" prefHeight="17.0" prefWidth="244.0" textFill="RED">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="adresseerror" layoutX="70.0" layoutY="338.0" prefHeight="17.0" prefWidth="244.0" textFill="RED">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="diplomeerror" layoutX="432.0" layoutY="338.0" prefHeight="17.0" prefWidth="244.0" textFill="RED">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="dateerror" layoutX="432.0" layoutY="262.0" prefHeight="17.0" prefWidth="244.0" textFill="RED">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="72.0" layoutY="355.0" text="Profession:" />
+                                    <TextField fx:id="profesion" alignment="TOP_LEFT" layoutX="71.0" layoutY="382.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="241.0" promptText="Profession" styleClass="white-background">
+                                       <cursor>
+                                          <Cursor fx:constant="NE_RESIZE" />
+                                       </cursor>
+                                    </TextField>
+                                    <Label layoutX="434.0" layoutY="280.0" text="Diplôme:" />
+                                    <TextField fx:id="diplome" alignment="TOP_LEFT" layoutX="433.0" layoutY="307.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="241.0" promptText="Diplôme" styleClass="white-background">
+                                       <cursor>
+                                          <Cursor fx:constant="NE_RESIZE" />
+                                       </cursor>
+                                    </TextField>
+                                    <Label layoutX="434.0" layoutY="354.0" text="Numéro de téléphone:" />
+                                    <TextField fx:id="num_tel" alignment="TOP_LEFT" layoutX="433.0" layoutY="381.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="241.0" promptText="Numéro de téléphone" styleClass="white-background">
+                                       <cursor>
+                                          <Cursor fx:constant="NE_RESIZE" />
+                                       </cursor>
+                                    </TextField>
+                                    <Label fx:id="profesionerror" layoutX="71.0" layoutY="412.0" prefHeight="17.0" prefWidth="244.0" textFill="RED">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="telephoneerror" layoutX="432.0" layoutY="412.0" prefHeight="17.0" prefWidth="244.0" textFill="RED">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                                    </children>
+                                </HBox>
                             </children>
-                        </HBox>
-                    </children>
-                </VBox>
-                <AnchorPane prefHeight="577.0" prefWidth="765.0">
-                    <children>
-                        <Label layoutX="4.0" layoutY="1.0" prefHeight="51.0" prefWidth="420.0" text=" Veuillez remplire les information suivantes:" textFill="#321c1c">
-                            <font>
-                                <Font size="21.0" />
-                            </font>
-                            <padding>
-                                <Insets top="20.0" />
-                            </padding>
-                        </Label>
-                        <TextField fx:id="theme" alignment="TOP_LEFT" layoutX="84.0" layoutY="197.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="241.0" promptText="thematique" styleClass="white-background">
-                            <cursor>
-                                <Cursor fx:constant="NE_RESIZE" />
-                            </cursor>
-                        </TextField>
-                        <Label layoutX="85.0" layoutY="171.0" text="Thématique:" />
-                        <Label layoutX="500.0" layoutY="82.0" text="Jour de l'Atelier:" />
-                        <DatePicker fx:id="jour_consult" layoutX="496.0" layoutY="114.0" prefHeight="30.0" prefWidth="241.0" promptText="JJ/MM/AAAA" styleClass="white-background" />
-                        <Label layoutX="500.0" layoutY="171.0" text="Heure:" />
-                        <Label layoutX="86.0" layoutY="262.0" text="Durée:" />
-                        <TextField fx:id="duree" alignment="TOP_LEFT" disable="true" layoutX="84.0" layoutY="289.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="241.0" promptText="Durée" style="-fx-text-fill: red; -fx-border-color: black;" styleClass="white-background">
-                            <cursor>
-                                <Cursor fx:constant="NE_RESIZE" />
-                            </cursor>
-                            <font>
-                                <Font name="System Bold" size="12.0" />
-                            </font>
-                        </TextField>
-                        <TextField fx:id="heure_consult" alignment="TOP_LEFT" layoutX="500.0" layoutY="197.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="241.0" promptText="00:00" styleClass="white-background">
-                            <cursor>
-                                <Cursor fx:constant="NE_RESIZE" />
-                            </cursor>
-                        </TextField>
-                        <Label fx:id="dureerror" layoutX="83.0" layoutY="319.0" prefHeight="17.0" prefWidth="244.0" textFill="RED">
-                            <font>
-                                <Font size="10.0" />
-                            </font>
-                        </Label>
-                        <Button fx:id="enregistrer" layoutX="500.0" layoutY="399.0" mnemonicParsing="false" onAction="#enregistrer" prefHeight="39.0" prefWidth="237.0" style="-fx-background-color: #b9f2ff; -fx-text-fill: black;" styleClass="btn" text="Enregistrer">
-                            <font>
-                                <Font size="16.0" />
-                            </font></Button>
-                        <Button fx:id="retour" layoutX="68.0" layoutY="393.0" mnemonicParsing="false" onAction="#retour" prefHeight="39.0" prefWidth="237.0" style="-fx-background-color: BF2374FF; -fx-text-fill: black;" styleClass="btn" text="Retour">
-                            <font>
-                                <Font size="16.0" />
-                            </font>
-                        </Button>
-                        <CheckComboBox fx:id="checcombox" layoutX="84.0" layoutY="110.0" prefHeight="30.0" prefWidth="241.0" />
-                  <Label layoutX="84.0" layoutY="82.0" prefHeight="17.0" prefWidth="116.0" text="Numéro de Dossier:" />
-                  <Label fx:id="numeroerror" layoutX="84.0" layoutY="144.0" prefHeight="17.0" prefWidth="239.0"  textFill="RED" />
-                  <Label fx:id="thematiqueerror" layoutX="85.0" layoutY="227.0" prefHeight="17.0" prefWidth="239.0"  textFill="RED" />
-                  <Label fx:id="jourerror" layoutX="497.0" layoutY="144.0" prefHeight="17.0" prefWidth="239.0"  textFill="RED" />
-                  <Label fx:id="heureerror" layoutX="501.0" layoutY="227.0" prefHeight="17.0" prefWidth="239.0"   textFill="RED"/>
+                        </VBox>
+                      <AnchorPane layoutX="2.0" layoutY="10.0" prefHeight="64.0" prefWidth="748.0">
+                          <children>
+                              <Label layoutX="14.0" layoutY="21.0" prefHeight="30.0" prefWidth="380.0" text="Remplir les informations du patient :" textFill="#bf2374">
+                                  <font>
+                                      <Font name="System Bold" size="20.0" />
+                                  </font>
+                              </Label>
+                          </children>
+                      </AnchorPane>
                     </children>
                 </AnchorPane>
-            <Label prefHeight="17.0" prefWidth="239.0" />
             </children>
         </VBox>
     </center>

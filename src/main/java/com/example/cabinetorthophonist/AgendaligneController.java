@@ -4,13 +4,9 @@
 
 package com.example.cabinetorthophonist;
 
-import java.io.IOException;
-import java.net.URL;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.ResourceBundle;
-
-import Model.*;
+import Model.Adulte;
+import Model.Dossier;
+import Model.Rendez_vous;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -20,6 +16,12 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.net.URL;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.util.ResourceBundle;
 
 public class AgendaligneController {
 
@@ -81,7 +83,7 @@ public class AgendaligneController {
 
 
                     if(dossier.getPatient() instanceof Adulte){
-                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/tp_poo/info_adulte.fxml"));
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("info_adulte.fxml"));
                         Parent root = loader.load();
                         info_adulteController Controller = loader.getController();
                         Controller.setInfoData(rd,dossier);
@@ -90,7 +92,7 @@ public class AgendaligneController {
                         stage.setScene(scene);
 
                     }else {
-                        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/tp_poo/info_enfant.fxml"));
+                        FXMLLoader loader = new FXMLLoader(getClass().getResource("info_enfant.fxml"));
                         Parent root = loader.load();
                         info_enfantController Controller = loader.getController();
                         Controller.setInfoData(rd,dossier);
@@ -107,7 +109,7 @@ public class AgendaligneController {
             });
         } else {
             action.setVisible(false);
-            //plus.setVisible(true);// Masquez le bouton pour les autres types de rendez-vous
+            plus.setVisible(true);// Masquez le bouton pour les autres types de rendez-vous
         }
     }
 }
