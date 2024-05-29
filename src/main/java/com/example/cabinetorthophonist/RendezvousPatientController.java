@@ -34,14 +34,14 @@ public class RendezvousPatientController implements Initializable {
     private VBox patientslay;
 
     @FXML
-    private Label username1;
+    private Label utilisateur1;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle)
     {
         Orthophonist user= OrthophonisteSessionManager.getCurrentOrthophonisteName();
 
-        username1.setText(user.getCompte().getNom() + " " + user.getCompte().getPrenom());
+        utilisateur1.setText(user.getCompte().getNom() + " " + user.getCompte().getPrenom());
 
     }
 
@@ -90,12 +90,12 @@ public class RendezvousPatientController implements Initializable {
                 break;
 
             case "Se déconnecter":
-//                Orthophonist user= OrthophonisteSessionManager.getCurrentOrthophonisteName();
-//                String username =user.getEmail();
-//                String filepath="./src/main/Userinformation/" + username + ".ser";
-//                Orthophonist.serialize(filepath,user);
-//                newPage = true;
-//                PageRouter = "Login.fxml";
+                Orthophonist user= OrthophonisteSessionManager.getCurrentOrthophonisteName();
+                String username =user.getCompte().getEmail();
+                String filepath="./src/main/Userinformation/" + username + ".ser";
+                user.saveProfile(user);
+                newPage = true;
+                PageRouter = "login-view.fxml";
                 break;
 
             default:
@@ -147,7 +147,7 @@ public class RendezvousPatientController implements Initializable {
         for (Rendez_vous  rend : rendez_vous) {
 
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("rendez-vouselement.fxml"));
+            fxmlLoader.setLocation(getClass().getResource("Rendez_vouselement.fxml"));
             try {
                 BorderPane hBox = fxmlLoader.load();
                 RendezvousligneController cic = fxmlLoader.getController();

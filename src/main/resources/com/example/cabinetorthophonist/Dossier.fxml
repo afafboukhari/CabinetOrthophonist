@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cabinetorthophonist.ConsultationController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="670.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.cabinetorthophonist.DossierController">
     <left>
         <VBox prefHeight="600.0" prefWidth="235.0" styleClass="anchorpane" BorderPane.alignment="CENTER">
             <children>
@@ -205,11 +205,16 @@
                     <children>
                         <HBox alignment="CENTER_LEFT" prefHeight="111.0" prefWidth="765.0">
                             <children>
-                                <Label prefHeight="79.0" prefWidth="314.0" text=" Dossier médicale de  :" textAlignment="RIGHT" textFill="#bf2374">
+                                <Label prefHeight="78.0" prefWidth="258.0" text=" Dossier médicale de  :" textAlignment="RIGHT" textFill="#bf2374">
                                     <font>
                                         <Font name="System Bold" size="24.0" />
                                     </font>
                                 </Label>
+                        <Label fx:id="dossierusername" prefHeight="17.0" prefWidth="0.0">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
                             </children>
                         </HBox>
                     </children>
