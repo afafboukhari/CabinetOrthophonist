@@ -109,7 +109,7 @@ public class AgendaligneController {
             });
         } else {
             action.setVisible(false);
-            plus.setVisible(true);// Masquez le bouton pour les autres types de rendez-vous
+            //plus.setVisible(true);// Masquez le bouton pour les autres types de rendez-vous
         }
     }
 }
