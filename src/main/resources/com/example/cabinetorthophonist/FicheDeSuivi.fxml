@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -196,141 +197,66 @@
             </children>
         </VBox>
     </left>
-    <center>
-        <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
-            <children>
-                <VBox alignment="TOP_CENTER" prefHeight="445.0" prefWidth="665.0" spacing="25.0">
-                    <children>
-                        <HBox alignment="CENTER_LEFT" prefHeight="111.0" prefWidth="765.0">
-                            <children>
-                                <Label contentDisplay="CENTER" style="-fx-position-shape: center;" text="Bienvenue sur votre Application de Gestion de Cabinet d'Orthophonie" textFill="#00002c">
-                                    <font>
-                                        <Font name="System Bold" size="20.0" />
-                                    </font>
-                                    <padding>
-                                        <Insets bottom="20.0" left="10.0" right="50.0" top="20.0" />
-                                    </padding>
-                                </Label>
-                            </children>
-                            <opaqueInsets>
-                                <Insets />
-                            </opaqueInsets>
-                            <padding>
-                                <Insets bottom="10.0" left="20.0" top="10.0" />
-                            </padding>
-                        </HBox>
-                        <VBox prefHeight="290.0" prefWidth="765.0">
-                            <padding>
-                                <Insets left="40.0" right="40.0" />
-                            </padding>
-                            <children>
-                                <Label text="Fiche suivi">
-                                    <VBox.margin>
-                                        <Insets bottom="20.0" />
-                                    </VBox.margin>
-                                    <font>
-                                        <Font size="16.0" />
-                                    </font>
-                                </Label>
-                                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="585.0">
-                                    <children>
-                                        <VBox alignment="CENTER" prefHeight="50.0" prefWidth="50.0">
-                                            <children>
-                                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                                                    <image>
-                                                        <Image url="@../../../assets/images/CheckSign.png" />
-                                                    </image>
-                                                </ImageView>
-                                            </children>
-                                        </VBox>
-                                        <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="500.0">
-                                            <children>
-                                                <Label text="Planifiez et gérez vos rendez-vous (consultations, suivis, ateliers).">
-                                                    <font>
-                                                        <Font size="14.0" />
-                                                    </font></Label>
-                                            </children>
-                                        </VBox>
-                                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" />
-                                    </children>
-                                </HBox>
-                                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="585.0">
-                                    <children>
-                                        <VBox alignment="CENTER" prefHeight="50.0" prefWidth="50.0">
-                                            <children>
-                                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                                                    <image>
-                                                        <Image url="@../../../assets/images/CheckSign.png" />
-                                                    </image>
-                                                </ImageView>
-                                            </children>
-                                        </VBox>
-                                        <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="500.0">
-                                            <children>
-                                                <Label text="Créez et modifiez des bilans orthophoniques détaillés.">
-                                                    <font>
-                                                        <Font size="14.0" />
-                                                    </font></Label>
-                                            </children>
-                                        </VBox>
-                                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" />
-                                    </children>
-                                </HBox>
-                                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="585.0">
-                                    <children>
-                                        <VBox alignment="CENTER" prefHeight="50.0" prefWidth="50.0">
-                                            <children>
-                                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                                                    <image>
-                                                        <Image url="@../../../assets/images/CheckSign.png" />
-                                                    </image>
-                                                </ImageView>
-                                            </children>
-                                        </VBox>
-                                        <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="500.0">
-                                            <children>
-                                                <Label text="Gérez les objectifs thérapeutiques et évaluez les progrès.">
-                                                    <font>
-                                                        <Font size="14.0" />
-                                                    </font></Label>
-                                            </children>
-                                        </VBox>
-                                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" />
-                                    </children>
-                                </HBox>
-                                <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="585.0">
-                                    <children>
-                                        <VBox alignment="CENTER" prefHeight="50.0" prefWidth="50.0">
-                                            <children>
-                                                <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                                                    <image>
-                                                        <Image url="@../../../assets/images/CheckSign.png" />
-                                                    </image>
-                                                </ImageView>
-                                            </children>
-                                        </VBox>
-                                        <VBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="500.0">
-                                            <children>
-                                                <Label text="Stockez et consultez les dossiers patients en toute sécurité.">
-                                                    <font>
-                                                        <Font size="14.0" />
-                                                    </font></Label>
-                                            </children>
-                                        </VBox>
-                                        <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" />
-                                    </children>
-                                </HBox>
-                            </children>
-                        </VBox>
-
-                    </children>
-                </VBox>
-            </children>
-        </VBox>
-    </center>
    <stylesheets>
       <URL value="@homecss.css" />
       <URL value="@homecss.css" />
    </stylesheets>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane>
+               <children>
+                  <Label contentDisplay="CENTER" layoutX="14.0" prefHeight="75.0" prefWidth="527.0" style="-fx-position-shape: center;" text="Consulter ,Creer et Evaluer les  Fiches de suivi:" textFill="#012394e5" underline="true">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                     <padding>
+                        <Insets bottom="20.0" right="50.0" top="20.0" />
+                     </padding>
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="451.0" prefWidth="765.0">
+               <children>
+                  <VBox layoutX="1.0" layoutY="-2.0" prefHeight="595.0" prefWidth="764.0">
+                     <children>
+                        <HBox prefHeight="594.0" prefWidth="764.0">
+                           <children>
+                              <AnchorPane prefHeight="556.0" prefWidth="763.0">
+                                 <children>
+                                    <Label layoutX="275.0" layoutY="227.0" onMouseClicked="#creer_fiche" prefHeight="27.0" prefWidth="200.0" text="Creer Une Fiche de Suivi">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fx:id="creerfichesuivi" fitHeight="201.0" fitWidth="186.0" layoutX="289.0" layoutY="41.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../assets/images/ajouter-une-tache.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="evaluerfiche" fitHeight="211.0" fitWidth="204.0" layoutX="280.0" layoutY="278.0" onMouseClicked="#evaluerfiche" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../assets/images/liste-de-controle1.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="268.0" layoutY="482.0" onMouseClicked="#evaluerfiche" prefHeight="27.0" prefWidth="227.0" text="Evaluer Une Fiche de Suivi ">
+                                       <font>
+                                          <Font name="System Bold" size="16.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </center>
 
 </BorderPane>

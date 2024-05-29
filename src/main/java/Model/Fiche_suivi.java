@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 public class Fiche_suivi implements Serializable {
     static int num ;
+    Patient patient;
     private Objectif[] objectifs;
 
 

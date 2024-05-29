@@ -187,25 +187,16 @@ public class BOAnamneseController
                 } catch (IOException e) {
                     e.printStackTrace(); // Handle FXML loading errors
                 }
+                //save_answers(loader);
             }
         }
     }
 
     @FXML
     private Button suivant;
-    public void save_answers()
-    {
-//        if(adulte)
-//        {
-//            for (Node child : container.getChildren()) {
-//                if (child instanceof VBox) { // Assuming questionView is a VBox
-//                    ReponseTestController childController = ((VBox) child).getController();
-//                    String userResponse = String.valueOf(childController.getAnswer());
-//                }
-//            }
-//        }else{
+//    public void save_answers(FXMLLoader loader)
+//    {
 //
-//        }
 //        try {
 //            FileOutputStream fileOut = new FileOutputStream("src/data/"+orthophonist.getEmail() + ".ser");
 //            ObjectOutputStream out = new ObjectOutputStream(fileOut);
@@ -216,6 +207,10 @@ public class BOAnamneseController
 //        } catch (IOException var3) {
 //            System.out.println("Une erreure est servenue : " + var3.getMessage());
 //        }
+//    }
+
+    public void next_view()
+    {
         try {
             Parent next = (Parent)FXMLLoader.load(this.getClass().getResource("EpreuveEcrite.fxml"));
             Scene currentScene = this.suivant.getScene();
