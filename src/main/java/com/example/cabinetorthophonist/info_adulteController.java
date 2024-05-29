@@ -4,13 +4,10 @@
 
 package com.example.cabinetorthophonist;
 
-import java.io.IOException;
-import java.net.URL;
-import java.time.LocalDate;
-import java.util.Objects;
-import java.util.ResourceBundle;
-
-import Model.*;
+import Model.Adulte;
+import Model.Dossier;
+import Model.Patient;
+import Model.Rendez_vous;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,9 +15,14 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
+
+import java.io.IOException;
+import java.net.URL;
+import java.time.LocalDate;
+import java.util.Objects;
+import java.util.ResourceBundle;
 
 public class info_adulteController {
 
@@ -162,7 +164,7 @@ public class info_adulteController {
 
             try {
                 // Load the desired page
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/tp_poo/Infopersonnelle.fxml"));
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("Infopersonnelle.fxml"));
                 Parent root = loader.load();
                 InfopersonnelleController InfoController = loader.getController();
                 InfoController.setInfoData(patient);
@@ -276,7 +278,7 @@ public class info_adulteController {
     void retour(ActionEvent event)
     {
         try {
-            String PageRouter = "/com/example/tp_poo/Agenda.fxml";
+            String PageRouter = "Agenda.fxml";
             // Load the desired page
             Parent nextPage = FXMLLoader.load(Objects.requireNonNull(getClass().getResource(PageRouter)));
             Stage Scene = (Stage) ((Node)event.getSource()).getScene().getWindow();

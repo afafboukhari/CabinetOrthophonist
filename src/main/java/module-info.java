@@ -3,6 +3,7 @@ module com.example.cabinetorthophonist {
     requires javafx.fxml;
 
     requires com.dlsc.formsfx;
+    requires org.controlsfx.controls;
     requires java.desktop;
     requires jdk.compiler;
 

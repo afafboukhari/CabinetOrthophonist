@@ -11,9 +11,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -55,6 +53,9 @@ public class AgendaController
 
     @FXML // fx:id="agendaligne"
     private VBox agendaligne;
+
+    @FXML // fx:id="action"
+    private Button action; // Value injected by FXMLLoader
 
 
     @FXML
