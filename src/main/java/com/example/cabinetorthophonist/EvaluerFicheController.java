@@ -141,7 +141,7 @@ public class EvaluerFicheController
         Fiche_suivi ficheSuivi = dossier.getFiches_suivi().getLast();
         objectif1.setText(ficheSuivi.getObjectifs()[0].getNom());
         objectif2.setText(ficheSuivi.getObjectifs()[1].getNom());
-        objectif2.setText(ficheSuivi.getObjectifs()[2].getNom());
+        objectif3.setText(ficheSuivi.getObjectifs()[2].getNom());
 
         if(ficheSuivi.isAtteint())
         {

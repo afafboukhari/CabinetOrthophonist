@@ -254,7 +254,7 @@
                         <Font size="20.0" />
                      </font>
                   </Text>
-                  <CheckBox mnemonicParsing="false" prefHeight="27.0" prefWidth="68.0" text="atteint" />
+                  <CheckBox fx:id="checkBox1" mnemonicParsing="false" prefHeight="27.0" prefWidth="68.0" text="atteint" />
                </children>
                <VBox.margin>
                   <Insets left="10.0" top="15.0" />
@@ -262,7 +262,7 @@
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="765.0" spacing="7.0">
                <children>
-                  <Text fx:id="objectif2" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="668.8944969177246">
+                  <Text fx:id="objectif2" strokeType="OUTSIDE" strokeWidth="0.0" text="Objectif2" wrappingWidth="668.8944969177246">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -270,12 +270,12 @@
                         <Insets left="5.0" />
                      </HBox.margin>
                   </Text>
-                  <CheckBox mnemonicParsing="false" prefHeight="27.0" prefWidth="68.0" text="atteint" />
+                  <CheckBox fx:id="checkBox2" mnemonicParsing="false" prefHeight="27.0" prefWidth="68.0" text="atteint" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" prefHeight="35.0" prefWidth="765.0" spacing="7.0">
                <children>
-                  <Text fx:id="objectif3" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="668.8944969177246">
+                  <Text fx:id="objectif3" strokeType="OUTSIDE" strokeWidth="0.0" text="Objectif3" wrappingWidth="668.8944969177246">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -283,7 +283,7 @@
                         <Insets left="5.0" />
                      </HBox.margin>
                   </Text>
-                  <CheckBox mnemonicParsing="false" prefHeight="27.0" prefWidth="68.0" text="atteint" />
+                  <CheckBox fx:id="checkBox3" mnemonicParsing="false" prefHeight="27.0" prefWidth="68.0" text="atteint" />
                </children>
             </HBox>
             <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0">

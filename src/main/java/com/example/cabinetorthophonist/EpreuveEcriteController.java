@@ -151,7 +151,7 @@ public class EpreuveEcriteController
                 VBox questionView = loader.load(); // Load the custom view
                 ReponseTestController2 controller = loader.getController(); // Access the custom view's controller (if needed)
                 controller.getQuestion().setText("Question " + (i + 1) + " :" + Question[i][0] ); // Set question text (optional)
-                controller.getChoix().setText("1-"+Question[i][0] +" 2-" + Question[i][1]+" 3-" + Question[i][2]);
+                controller.getChoix().setText("1-"+Question[i][1] +" 2-" + Question[i][2]+" 3-" + Question[i][3]);
                 container.getChildren().add(questionView);
             } catch (IOException e) {
                 e.printStackTrace(); // Handle FXML loading errors
