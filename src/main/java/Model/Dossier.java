@@ -4,7 +4,11 @@ package Model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.TreeSet;
+
+
+
 
 public class Dossier implements Serializable {
     private static int counter ;
@@ -43,12 +47,17 @@ public class Dossier implements Serializable {
         this.fiches_suivi = fiches_suivi;
     }
 
+    public void setFiches_suivi(Fiche_suivi fiches_suivi) {
+        this.fiches_suivi.add(fiches_suivi);
+    }
+
     public Dossier(Patient patient)
     {
         this.patient= patient;
         numero = counter+1;
         counter++;
         this.rendez_vous = new TreeSet<Rendez_vous>();
+        this.fiches_suivi = new ArrayList<Fiche_suivi>();
 
     }
     public Dossier()
@@ -56,6 +65,7 @@ public class Dossier implements Serializable {
         numero = counter+1;
         counter++;
         this.rendez_vous = new TreeSet<Rendez_vous>();
+        this.fiches_suivi = new ArrayList<Fiche_suivi>();
 
     }
 

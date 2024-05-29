@@ -20,6 +20,7 @@ public    class  Patient implements Serializable {
         this.nom = nom;
         this.prenom =prenom;
         this.num_dossier = num;
+        System.out.println("nom"+num);
     }
 
     public int getNum_dossier() {
