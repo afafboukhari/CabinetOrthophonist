@@ -31,7 +31,7 @@ public class PatientController implements Initializable {
     @FXML
     private VBox patientslay;
     @FXML
-    private Label username1;
+    private Label utilisateur1;
 
 
     @FXML
@@ -126,9 +126,9 @@ public class PatientController implements Initializable {
     {
 
         Orthophonist user=OrthophonisteSessionManager.getCurrentOrthophonisteName();
-        username1.setText(user.getCompte().getNom() + " " + user.getCompte().getPrenom());
+        utilisateur1.setText(user.getNom() + " " + user.getPrenom());
 
-        TreeMap<Integer, Dossier> patients = user.getMes_patients();
+      /*  TreeMap<Integer, Dossier> patients = user.getMes_patients();
 
         Projet_therapeu po =new Projet_therapeu("description du projet dorthophoniste ");
         String[] observations = {
@@ -215,12 +215,12 @@ public class PatientController implements Initializable {
         }
         nombre_adultes.setText(String.valueOf(adultes));
         nombre_enfants.setText(String.valueOf(enfants));
-        nombre_totales.setText(String.valueOf(adultes+enfants));
+        nombre_totales.setText(String.valueOf(adultes+enfants)); */
     }
     public void  patientt() throws IOException, ClassNotFoundException {
 
         Orthophonist user=OrthophonisteSessionManager.getCurrentOrthophonisteName();
-        username1.setText(user.getCompte().getNom() + " " + user.getCompte().getPrenom());
+        utilisateur1.setText(user.getNom() + " " + user.getPrenom());
 
         Enfant patient = new Enfant();
         Adulte patient1=new Adulte();
@@ -264,7 +264,7 @@ public class PatientController implements Initializable {
 
 
 
-        Projet_therapeu po =new Projet_therapeu("description du projet dorthophoniste ");
+      /*  Projet_therapeu po =new Projet_therapeu("description du projet dorthophoniste ");
         String[] observations = {
                 "Patient is experiencing mild headaches.",
                 "No signs of fever.",
@@ -333,7 +333,7 @@ public class PatientController implements Initializable {
         patient1.setNumero_personnel(794157061);
 
         Dossier dossier2 =  new Dossier(rendez_vous,bos, (ArrayList<Fiche_suivi>) ficheSuivis,patient1);
-        user.add_patient(dossier2);
+        user.add_patient(dossier2); */
         //   String email = user.getCompte().getEmail().toLowerCase().replace(" ", "");
         //  serialize("./src/main/Userinformation/" + email + ".ser",user);
 

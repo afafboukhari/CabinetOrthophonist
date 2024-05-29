@@ -196,7 +196,7 @@ public class DossierController implements Initializable {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("Fiche.fxml"));
                     Parent root = loader.load();
                     FicheDeSuiviController fiche = loader.getController();
-                    fiche.setficheData(dossier);
+                    //fiche.setficheData(dossier);
 
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     Scene scene = new Scene(root, 1000, 670);
@@ -235,7 +235,7 @@ public class DossierController implements Initializable {
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("BO.fxml"));
                     Parent root = loader.load();
                     BOController rend = loader.getController();
-                    rend.setficheData(dossier);
+                    //rend.setficheData(dossier);
 //                    Stage stage = new Stage();
 //                    stage.setScene(new Scene(root, 1000, 670));
 //                    stage.show();
