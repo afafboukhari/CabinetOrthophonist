@@ -1,6 +1,5 @@
 package com.example.cabinetorthophonist;
 
-import Model.Dossier;
 import Model.Orthophonist;
 import Model.OrthophonisteSessionManager;
 import javafx.fxml.FXML;
@@ -11,14 +10,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-import javax.swing.*;
 import java.io.IOException;
-import java.util.TreeMap;
 
-public class BOController
+public class DiagnosticController
 {
     @FXML
     private Label Agenda;
@@ -34,6 +32,10 @@ public class BOController
     private Label Profile;
     @FXML
     private Label deconnecter;
+    @FXML
+    private Label ajoutertest;
+    @FXML
+    private Label Consultertest;
 
 
     @FXML
@@ -109,32 +111,35 @@ public class BOController
     }
 
     @FXML
-    private ComboBox<String> patients;
+    private ComboBox<String> Types1;
     @FXML
-    private Button suivant;
+    private ComboBox<String> Types2;
+    @FXML
+    private ComboBox<String> Types3;
+    @FXML
+    private TextField textField1;
+    @FXML
+    private TextField textField2;
+    @FXML
+    private TextField textField3;
 
     public void initialize()
     {
-        TreeMap<Integer, Dossier> Dossiers;
-        Dossiers = OrthophonisteSessionManager.getCurrentOrthophonisteName().getMes_dossiers();
-
-        if (Dossiers != null) {
-            // Iterate through the TreeMap
-            for (Dossier dossier : Dossiers.values()) {
-                // Assuming "nom" is the attribute you want to display in the ComboBox
-                String patient = dossier.getPatient().getNom()+" "+dossier.getPatient().getPrenom();
-                patients.getItems().add(patient);
-            }
+        String tab[] = {"trouble de la déglutition","trouble neur-dévloppementaux","trouble cognitifs"};
+        for(int i=0;i<3;i++) {
+            Types1.getItems().add(tab[i]);
+            Types2.getItems().add(tab[i]);
+            Types3.getItems().add(tab[i]);
         }
-
     }
 
-    public void next()
+    @FXML
+    private Button suivant;
+
+    public void save_answers()
     {
-        String patient = patients.getValue();
-        BOAnamneseController.adulte = patient.equals("Boukhari Afaf");
         try {
-            Parent next = (Parent)FXMLLoader.load(this.getClass().getResource("BO-Anamnese.fxml"));
+            Parent next = (Parent)FXMLLoader.load(this.getClass().getResource("BO.fxml"));
             Scene currentScene = this.suivant.getScene();
             currentScene.setRoot(next);
 
@@ -142,4 +147,8 @@ public class BOController
             e.printStackTrace();
         }
     }
-}
+    }
+
+
+
+

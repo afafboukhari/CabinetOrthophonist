@@ -1,8 +1,7 @@
 package com.example.cabinetorthophonist;
 
-import Model.Dossier;
-import Model.Orthophonist;
-import Model.OrthophonisteSessionManager;
+import Model.*;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -12,13 +11,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-import javax.swing.*;
 import java.io.IOException;
-import java.util.TreeMap;
+import java.util.ArrayList;
 
-public class BOController
+public class EpreuveEcriteController
 {
     @FXML
     private Label Agenda;
@@ -34,7 +33,10 @@ public class BOController
     private Label Profile;
     @FXML
     private Label deconnecter;
-
+    @FXML
+    private Label ajoutertest;
+    @FXML
+    private Label Consultertest;
 
     @FXML
     public void handleRouting(MouseEvent event) {
@@ -109,32 +111,59 @@ public class BOController
     }
 
     @FXML
-    private ComboBox<String> patients;
-    @FXML
-    private Button suivant;
+    private ComboBox Sujet;
+    public void initialize() {
+        ArrayList<Questionnaire> questionnaires = new ArrayList<>();
 
-    public void initialize()
-    {
-        TreeMap<Integer, Dossier> Dossiers;
-        Dossiers = OrthophonisteSessionManager.getCurrentOrthophonisteName().getMes_dossiers();
+        questionnaires = OrthophonisteSessionManager.getCurrentOrthophonisteName().getMes_test().getQuestionnaires();
 
-        if (Dossiers != null) {
-            // Iterate through the TreeMap
-            for (Dossier dossier : Dossiers.values()) {
-                // Assuming "nom" is the attribute you want to display in the ComboBox
-                String patient = dossier.getPatient().getNom()+" "+dossier.getPatient().getPrenom();
-                patients.getItems().add(patient);
+        if (questionnaires != null) {
+
+            // Iterate through the list and fill the ComboBox
+            for (Questionnaire anamnese : questionnaires) {
+                String anamneseTitle = anamnese.getTitre(); // Assuming "titre" holds the display text
+                Sujet.getItems().add(anamneseTitle);
             }
         }
 
     }
 
-    public void next()
+    @FXML
+    private VBox container;
+    @FXML
+    private Button suivant;
+
+    public void generateTextFields(ActionEvent event)
     {
-        String patient = patients.getValue();
-        BOAnamneseController.adulte = patient.equals("Boukhari Afaf");
+        int existingViews = container.getChildren().size() - 1;
+
+        // Remove existing views only if necessary
+        if (existingViews > 0) {
+            container.getChildren().remove(0, existingViews + 1); // Remove from index 1 (inclusive) to existingViews (exclusive)
+        }
+        Questionnaire questionnaire;
+        questionnaire = OrthophonisteSessionManager.getCurrentOrthophonisteName().getMes_test().getbyTitleQuestionnaire((String) Sujet.getSelectionModel().getSelectedItem());
+        String[][] Question;
+        Question = questionnaire.getQuestion();
+        for (int i = 0; i < questionnaire.getCapacite(); i++) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ReponseTest2.fxml")); // Load your FXML
+            try {
+                VBox questionView = loader.load(); // Load the custom view
+                ReponseTestController2 controller = loader.getController(); // Access the custom view's controller (if needed)
+                controller.getQuestion().setText("Question " + (i + 1) + " :" + Question[i][0] ); // Set question text (optional)
+                controller.getChoix().setText("1-"+Question[i][0] +" 2-" + Question[i][1]+" 3-" + Question[i][2]);
+                container.getChildren().add(questionView);
+            } catch (IOException e) {
+                e.printStackTrace(); // Handle FXML loading errors
+            }
+        }
+
+    }
+
+    public void save_answers()
+    {
         try {
-            Parent next = (Parent)FXMLLoader.load(this.getClass().getResource("BO-Anamnese.fxml"));
+            Parent next = (Parent)FXMLLoader.load(this.getClass().getResource("Diagnostic.fxml"));
             Scene currentScene = this.suivant.getScene();
             currentScene.setRoot(next);
 
@@ -142,4 +171,5 @@ public class BOController
             e.printStackTrace();
         }
     }
+
 }

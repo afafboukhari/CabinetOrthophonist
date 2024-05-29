@@ -95,5 +95,4 @@ public    class  Patient implements Serializable {
     public void setAdresse(String adresse) {
         Adresse = adresse;
     }
-
 }

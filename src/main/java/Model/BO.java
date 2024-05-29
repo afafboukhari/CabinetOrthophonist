@@ -1,9 +1,11 @@
 package Model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class BO  implements Serializable
 {
+    private ArrayList<ReponseAnamnese> ReponsesAnamnese;
     private Epreuve_clinique epreuves_cliniques[];
     private Diagnostique diagnostique;
     private Projet_therapeutique projet;
@@ -55,5 +57,13 @@ public class BO  implements Serializable
 
     public void setProjet(Projet_therapeutique projet) {
         this.projet = projet;
+    }
+
+    public ArrayList<ReponseAnamnese> getReponsesAnamnese() {
+        return ReponsesAnamnese;
+    }
+
+    public void setReponsesAnamnese(ReponseAnamnese reponsesAnamnese) {
+        ReponsesAnamnese.add(reponsesAnamnese);
     }
 }

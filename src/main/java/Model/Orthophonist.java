@@ -18,7 +18,6 @@ public class Orthophonist implements Serializable
     private String num_tel;
     private String email;
     private Agenda agenda ;
-    private TreeMap<Integer,Dossier> mes_dossiers;
     private Tests mes_test;
     private String motDePasse;
     private Compte compte;
@@ -162,4 +161,5 @@ public class Orthophonist implements Serializable
     public void setMes_test(Tests mes_test) {
         this.mes_test = mes_test;
     }
+
 }

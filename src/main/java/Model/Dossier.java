@@ -25,6 +25,16 @@ public class Dossier implements Serializable {
         this.patient = patient;
     }
 
+    public List<BO> get_BO()
+    {
+        return this.Bilans_orth;
+    }
+
+    public void set_BO(BO e)
+    {
+        this.Bilans_orth.addLast(e);
+    }
+
     public ArrayList<Fiche_suivi> getFiches_suivi() {
         return fiches_suivi;
     }
