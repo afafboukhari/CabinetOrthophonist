@@ -15,7 +15,9 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.TreeMap;
 
@@ -193,6 +195,27 @@ public class BOAnamneseController
     private Button suivant;
     public void save_answers()
     {
+//        if(adulte)
+//        {
+//            for (Node child : container.getChildren()) {
+//                if (child instanceof VBox) { // Assuming questionView is a VBox
+//                    ReponseTestController childController = ((VBox) child).getController();
+//                    String userResponse = String.valueOf(childController.getAnswer());
+//                }
+//            }
+//        }else{
+//
+//        }
+//        try {
+//            FileOutputStream fileOut = new FileOutputStream("src/data/"+orthophonist.getEmail() + ".ser");
+//            ObjectOutputStream out = new ObjectOutputStream(fileOut);
+//            out.writeObject(orthophonist);
+//            out.close();
+//            fileOut.close();
+//            System.out.println("Compte sauvegardé avec succees !");
+//        } catch (IOException var3) {
+//            System.out.println("Une erreure est servenue : " + var3.getMessage());
+//        }
         try {
             Parent next = (Parent)FXMLLoader.load(this.getClass().getResource("EpreuveEcrite.fxml"));
             Scene currentScene = this.suivant.getScene();
